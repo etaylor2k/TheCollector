@@ -23,6 +23,20 @@ Public Class LoginForm
             Try
                 sqlReader = sqlCommand.ExecuteReader()
                 If sqlReader.HasRows Then
+
+                    Do While sqlReader.Read
+                        ' read the users information from the query
+                        MainForm.userIdentity.id = sqlReader.GetInt64(0)
+                        MainForm.userIdentity.username = sqlReader.GetString(1)
+                        MainForm.userIdentity.password = sqlReader.GetString(3)
+                        MainForm.userIdentity.level = sqlReader.GetInt64(3)
+                        MainForm.userIdentity.fname = sqlReader.GetString(4)
+                        MainForm.userIdentity.lname = sqlReader.GetString(5)
+                        MainForm.userIdentity.email = sqlReader.GetString(6)
+
+                    Loop
+
+                    MsgBox("Welcome " + MainForm.userIdentity.fname + " " + MainForm.userIdentity.lname)
                     MainForm.connection = connection ' This conneciton 
                     MainForm.Show()
                     Me.Hide()
