@@ -2,13 +2,6 @@
 
 Public Class LoginForm
 
-    ' TODO: Insert code to perform custom authentication using the provided username and password 
-    ' (See http://go.microsoft.com/fwlink/?LinkId=35339).  
-    ' The custom principal can then be attached to the current thread's principal as follows: 
-    '     My.User.CurrentPrincipal = CustomPrincipal
-    ' where CustomPrincipal is the IPrincipal implementation used to perform authentication. 
-    ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
-    ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOK.Click
         ' This is the subroutine that handles the authentication of the applicaitons
@@ -20,7 +13,7 @@ Public Class LoginForm
         ' Dim connectionQuery As String = "select * from users where username = '" + txtUser + "' and password = '" + txtPass + "'"
 
         connection = New MySqlConnection
-        connection.ConnectionString = "server =localhost; user id=appuser; password =password; database =thecollector"
+        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3307"
 
         Try
             connection.Open()
@@ -30,6 +23,7 @@ Public Class LoginForm
             Try
                 sqlReader = sqlCommand.ExecuteReader()
                 If sqlReader.HasRows Then
+                    MainForm.connection = connection ' This conneciton 
                     MainForm.Show()
                     Me.Hide()
                 Else
@@ -42,7 +36,7 @@ Public Class LoginForm
             End Try
 
         Catch ex As Exception
-            MsgBox("error connecting to the database")
+            MsgBox("error connecting to the database: " + ex.Message)
 
         End Try
 
@@ -50,7 +44,6 @@ Public Class LoginForm
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
-        MainForm.Show()
 
         Me.Close()
     End Sub
