@@ -13,7 +13,7 @@ Public Class LoginForm
         ' Dim connectionQuery As String = "select * from users where username = '" + txtUser + "' and password = '" + txtPass + "'"
 
         connection = New MySqlConnection
-        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3307"
+        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3306"
 
         Try
             connection.Open()
@@ -25,7 +25,7 @@ Public Class LoginForm
                 If sqlReader.HasRows Then
 
                     Do While sqlReader.Read
-                        ' read the users information from the query
+                        ' read the users information from the query and assigns them to the MainForm's identity structure
                         MainForm.userIdentity.id = sqlReader.GetInt64(0)
                         MainForm.userIdentity.username = sqlReader.GetString(1)
                         MainForm.userIdentity.password = sqlReader.GetString(3)

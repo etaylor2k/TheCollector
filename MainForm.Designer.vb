@@ -24,9 +24,9 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuFile_UserInformation = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripSeparator()
-        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuFile_Quit = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,27 +41,27 @@ Partial Class MainForm
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.ExitToolStripMenuItem, Me.QuitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile_UserInformation, Me.ExitToolStripMenuItem, Me.mnuFile_Quit})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'NewToolStripMenuItem
+        'mnuFile_UserInformation
         '
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.NewToolStripMenuItem.Text = "User Information"
+        Me.mnuFile_UserInformation.Name = "mnuFile_UserInformation"
+        Me.mnuFile_UserInformation.Size = New System.Drawing.Size(163, 22)
+        Me.mnuFile_UserInformation.Text = "User Information"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(160, 6)
         '
-        'QuitToolStripMenuItem
+        'mnuFile_Quit
         '
-        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.QuitToolStripMenuItem.Text = "Quit"
+        Me.mnuFile_Quit.Name = "mnuFile_Quit"
+        Me.mnuFile_Quit.Size = New System.Drawing.Size(163, 22)
+        Me.mnuFile_Quit.Text = "Quit"
         '
         'MainForm
         '
@@ -69,6 +69,7 @@ Partial Class MainForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(992, 551)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainForm"
         Me.Text = "The Collector"
@@ -80,8 +81,8 @@ Partial Class MainForm
     End Sub
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuFile_UserInformation As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents QuitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuFile_Quit As System.Windows.Forms.ToolStripMenuItem
 
 End Class
