@@ -1,16 +1,3 @@
-C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.exe
-C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.pdb
-C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.LoginForm.resources
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MainForm.resources
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.Resources.resources
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.SplashScreen.resources
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
 C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.exe
 C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.pdb
 C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
@@ -25,3 +12,17 @@ C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.wr
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
+C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.exe
+C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.pdb
+C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.LoginForm.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MainForm.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.Resources.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.SplashScreen.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.UserInfoForm.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb

@@ -26,8 +26,8 @@ Partial Class UserInfoForm
         Me.txtLname = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
-        Me.txtCurrentPAssword = New System.Windows.Forms.TextBox()
-        Me.txtxUsername = New System.Windows.Forms.TextBox()
+        Me.txtCurrentPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,9 +37,9 @@ Partial Class UserInfoForm
         Me.txtNewPassword = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.cmdOk = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +61,7 @@ Partial Class UserInfoForm
         '
         Me.txtEmail.Location = New System.Drawing.Point(156, 25)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(186, 20)
         Me.txtEmail.TabIndex = 2
         '
         'txtConfirmPassword
@@ -70,22 +70,22 @@ Partial Class UserInfoForm
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtConfirmPassword.TabIndex = 3
+        Me.txtConfirmPassword.TabIndex = 13
         '
-        'txtCurrentPAssword
+        'txtCurrentPassword
         '
-        Me.txtCurrentPAssword.Location = New System.Drawing.Point(2, 48)
-        Me.txtCurrentPAssword.Name = "txtCurrentPAssword"
-        Me.txtCurrentPAssword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtCurrentPAssword.Size = New System.Drawing.Size(100, 20)
-        Me.txtCurrentPAssword.TabIndex = 4
+        Me.txtCurrentPassword.Location = New System.Drawing.Point(2, 48)
+        Me.txtCurrentPassword.Name = "txtCurrentPassword"
+        Me.txtCurrentPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtCurrentPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtCurrentPassword.TabIndex = 4
         '
-        'txtxUsername
+        'txtUsername
         '
-        Me.txtxUsername.Location = New System.Drawing.Point(3, 25)
-        Me.txtxUsername.Name = "txtxUsername"
-        Me.txtxUsername.Size = New System.Drawing.Size(100, 20)
-        Me.txtxUsername.TabIndex = 5
+        Me.txtUsername.Location = New System.Drawing.Point(3, 25)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(100, 20)
+        Me.txtUsername.TabIndex = 5
         '
         'Label1
         '
@@ -163,7 +163,7 @@ Partial Class UserInfoForm
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.txtCurrentPAssword)
+        Me.Panel1.Controls.Add(Me.txtCurrentPassword)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txtNewPassword)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -172,6 +172,15 @@ Partial Class UserInfoForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(232, 180)
         Me.Panel1.TabIndex = 14
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(-3, 130)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(116, 13)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Confirm New Passowrd"
         '
         'cmdCancel
         '
@@ -191,15 +200,6 @@ Partial Class UserInfoForm
         Me.cmdOk.Text = "Ok"
         Me.cmdOk.UseVisualStyleBackColor = True
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(-3, 130)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(116, 13)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Confirm New Passowrd"
-        '
         'UserInfoForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,7 +212,7 @@ Partial Class UserInfoForm
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtxUsername)
+        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.txtLname)
         Me.Controls.Add(Me.txtFname)
@@ -228,8 +228,8 @@ Partial Class UserInfoForm
     Friend WithEvents txtLname As System.Windows.Forms.TextBox
     Friend WithEvents txtEmail As System.Windows.Forms.TextBox
     Friend WithEvents txtConfirmPassword As System.Windows.Forms.TextBox
-    Friend WithEvents txtCurrentPAssword As System.Windows.Forms.TextBox
-    Friend WithEvents txtxUsername As System.Windows.Forms.TextBox
+    Friend WithEvents txtCurrentPassword As System.Windows.Forms.TextBox
+    Friend WithEvents txtUsername As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label

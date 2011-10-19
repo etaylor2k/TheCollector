@@ -41,7 +41,10 @@ Public Class MainForm
         usersInfoForm.txtEmail.Text = Me.userIdentity.email
         usersInfoForm.txtFname.Text = Me.userIdentity.fname
         usersInfoForm.txtLname.Text = Me.userIdentity.lname
-        usersInfoForm.txtxUsername.Text = Me.userIdentity.username
+        usersInfoForm.txtUsername.Text = Me.userIdentity.username
+
+        'send the connection string
+        usersInfoForm.connection = Me.connection
 
         usersInfoForm.Show()
 
@@ -54,4 +57,5 @@ Public Class MainForm
         Me.Close()
 
     End Sub
+
 End Class

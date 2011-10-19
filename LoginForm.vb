@@ -13,7 +13,7 @@ Public Class LoginForm
         ' Dim connectionQuery As String = "select * from users where username = '" + txtUser + "' and password = '" + txtPass + "'"
 
         connection = New MySqlConnection
-        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3306"
+        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3307"
 
         Try
             connection.Open()
@@ -28,7 +28,7 @@ Public Class LoginForm
                         ' read the users information from the query and assigns them to the MainForm's identity structure
                         MainForm.userIdentity.id = sqlReader.GetInt64(0)
                         MainForm.userIdentity.username = sqlReader.GetString(1)
-                        MainForm.userIdentity.password = sqlReader.GetString(3)
+                        MainForm.userIdentity.password = sqlReader.GetString(2)
                         MainForm.userIdentity.level = sqlReader.GetInt64(3)
                         MainForm.userIdentity.fname = sqlReader.GetString(4)
                         MainForm.userIdentity.lname = sqlReader.GetString(5)
@@ -44,20 +44,27 @@ Public Class LoginForm
                     MsgBox("Invalid usename and password combination")
 
                 End If
+                sqlReader.Close()
+
             Catch ex As Exception
                 MsgBox(ex.Message)
+                sqlReader.Close()
 
             End Try
 
         Catch ex As Exception
             MsgBox("error connecting to the database: " + ex.Message)
 
+        Finally
+            connection.Dispose()
         End Try
 
             Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
+        ' This subroutine will close the window when the user clicks the cancel button
+        ' This subroutine is not expecting or passing any perameters
 
         Me.Close()
     End Sub
