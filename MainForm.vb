@@ -48,6 +48,7 @@ Public Class MainForm
 
         usersInfoForm.Show()
 
+
     End Sub
 
     Private Sub mnuFile_Quit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mnuFile_Quit.Click
@@ -58,4 +59,15 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub addClass()
+        ' This subroutine will create the a class based off 
+    End Sub
+
+    Private Sub createStudent()
+
+    End Sub
+
+    Private Sub createTeacher()
+
+    End Sub
 End Class
