@@ -2,6 +2,7 @@
 
 Public Class LoginForm
 
+    Dim numberOfTries As Integer
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOK.Click
         ' This is the subroutine that handles the authentication of the applicaitons
@@ -10,7 +11,7 @@ Public Class LoginForm
         Dim connection As MySqlConnection
         Dim sqlReader As MySqlDataReader
         Dim sqlCommand As New MySqlCommand
-        ' Dim connectionQuery As String = "select * from users where username = '" + txtUser + "' and password = '" + txtPass + "'"
+        Dim authenticated As Boolean = False
 
         connection = New MySqlConnection
         connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3307"
@@ -36,12 +37,24 @@ Public Class LoginForm
 
                     Loop
 
+                    authenticated = True
                     MsgBox("Welcome " + MainForm.userIdentity.fname + " " + MainForm.userIdentity.lname)
                     MainForm.connection = connection ' This conneciton 
                     MainForm.Show()
                     Me.Hide()
                 Else
+
+                    numberOfTries += 1 ' we're going to allow 3 tries
+
                     MsgBox("Invalid usename and password combination")
+
+                    If numberOfTries >= 3 Then
+                        ' After the user has tried three times
+                        MsgBox("Maximum number of login attempts exceeded")
+
+                    End If
+                    txtUser.Text = ""
+                    txtPass.Text = ""
 
                 End If
                 sqlReader.Close()
@@ -59,7 +72,10 @@ Public Class LoginForm
             connection.Dispose()
         End Try
 
+        If ((authenticated = True) Or (numberOfTries >= 3)) Then
             Me.Close()
+        End If
+
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click

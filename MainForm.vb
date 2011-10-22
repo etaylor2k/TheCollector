@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Windows.Forms
 
 Public Class MainForm
 
@@ -17,9 +18,6 @@ Public Class MainForm
     Public userIdentity As identity
     Public connection As MySqlConnection
 
-    Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub mnuFile_UserInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFile_UserInformation.Click
         ' This subroutine will send the users identity to the USer Inforamtion form so that the user can modify the information
@@ -69,5 +67,18 @@ Public Class MainForm
 
     Private Sub createTeacher()
 
+    End Sub
+
+    Private Sub MainForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'InitializeComponent()
+
+        Dim MenuUserStripMenuitem = New System.Windows.Forms.ToolStripMenuItem()
+
+        MenuUserStripMenuitem.Name = "MenuUserStripMenuitem"
+        MenuUserStripMenuitem.Size = New System.Drawing.Size(37, 20)
+        MenuUserStripMenuitem.Text = "User"
+
+        ' Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {MenuUserStripMenuitem})
+        Me.MenuStrip1.Items.AddRange({MenuUserStripMenuitem})
     End Sub
 End Class
