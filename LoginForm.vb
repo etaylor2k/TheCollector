@@ -14,7 +14,7 @@ Public Class LoginForm
         Dim authenticated As Boolean = False
 
         connection = New MySqlConnection
-        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3307"
+        connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3306"
 
         Try
             connection.Open()
