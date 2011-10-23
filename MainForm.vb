@@ -70,13 +70,22 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'InitializeComponent()
 
         Dim MenuUserStripMenuitem = New System.Windows.Forms.ToolStripMenuItem()
+        Dim MenuClassStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Dim MenuHelpStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 
+        ' for the 
         MenuUserStripMenuitem.Name = "MenuUserStripMenuitem"
         MenuUserStripMenuitem.Size = New System.Drawing.Size(37, 20)
         MenuUserStripMenuitem.Text = "User"
+
+        MenuClassStripMenuItem.Name = "MenuClassStripMenuItem"
+        MenuClassStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        MenuClassStripMenuItem.Text = "Classes"
+
+
+
 
         ' Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {MenuUserStripMenuitem})
         Me.MenuStrip1.Items.AddRange({MenuUserStripMenuitem})
