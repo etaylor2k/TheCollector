@@ -76,6 +76,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Identity.vb" />
     <Compile Include="UserInfoForm.Designer.vb">
       <DependentUpon>UserInfoForm.vb</DependentUpon>
     </Compile>

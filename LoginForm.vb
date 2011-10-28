@@ -39,6 +39,9 @@ Public Class LoginForm
 
                     authenticated = True
                     MsgBox("Welcome " + MainForm.userIdentity.fname + " " + MainForm.userIdentity.lname)
+
+                    sqlReader.Close()
+
                     MainForm.connection = connection ' This conneciton 
                     MainForm.Show()
                     Me.Hide()
@@ -56,8 +59,10 @@ Public Class LoginForm
                     txtUser.Text = ""
                     txtPass.Text = ""
 
+                    sqlReader.Close()
+
                 End If
-                sqlReader.Close()
+
 
             Catch ex As Exception
                 MsgBox(ex.Message)
