@@ -46,6 +46,7 @@ Partial Class UserInfoForm
         'txtFname
         '
         Me.txtFname.Location = New System.Drawing.Point(3, 64)
+        Me.txtFname.MaxLength = 255
         Me.txtFname.Name = "txtFname"
         Me.txtFname.Size = New System.Drawing.Size(100, 20)
         Me.txtFname.TabIndex = 0
@@ -53,6 +54,7 @@ Partial Class UserInfoForm
         'txtLname
         '
         Me.txtLname.Location = New System.Drawing.Point(3, 103)
+        Me.txtLname.MaxLength = 255
         Me.txtLname.Name = "txtLname"
         Me.txtLname.Size = New System.Drawing.Size(100, 20)
         Me.txtLname.TabIndex = 1
@@ -60,6 +62,7 @@ Partial Class UserInfoForm
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(156, 25)
+        Me.txtEmail.MaxLength = 255
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(186, 20)
         Me.txtEmail.TabIndex = 2
@@ -67,6 +70,7 @@ Partial Class UserInfoForm
         'txtConfirmPassword
         '
         Me.txtConfirmPassword.Location = New System.Drawing.Point(0, 146)
+        Me.txtConfirmPassword.MaxLength = 255
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(100, 20)
@@ -75,6 +79,7 @@ Partial Class UserInfoForm
         'txtCurrentPassword
         '
         Me.txtCurrentPassword.Location = New System.Drawing.Point(2, 48)
+        Me.txtCurrentPassword.MaxLength = 255
         Me.txtCurrentPassword.Name = "txtCurrentPassword"
         Me.txtCurrentPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtCurrentPassword.Size = New System.Drawing.Size(100, 20)
@@ -83,6 +88,7 @@ Partial Class UserInfoForm
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(3, 25)
+        Me.txtUsername.MaxLength = 100
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(100, 20)
         Me.txtUsername.TabIndex = 5
@@ -144,6 +150,7 @@ Partial Class UserInfoForm
         'txtNewPassword
         '
         Me.txtNewPassword.Location = New System.Drawing.Point(2, 96)
+        Me.txtNewPassword.MaxLength = 255
         Me.txtNewPassword.Name = "txtNewPassword"
         Me.txtNewPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtNewPassword.Size = New System.Drawing.Size(100, 20)

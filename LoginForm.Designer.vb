@@ -71,6 +71,7 @@ Partial Class LoginForm
         'txtUser
         '
         Me.txtUser.Location = New System.Drawing.Point(174, 44)
+        Me.txtUser.MaxLength = 100
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(220, 20)
         Me.txtUser.TabIndex = 1
@@ -78,6 +79,7 @@ Partial Class LoginForm
         'txtPass
         '
         Me.txtPass.Location = New System.Drawing.Point(174, 101)
+        Me.txtPass.MaxLength = 255
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(220, 20)

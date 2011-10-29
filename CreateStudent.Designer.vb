@@ -64,6 +64,7 @@ Partial Class CreateStudent
         'txtFname
         '
         Me.txtFname.Location = New System.Drawing.Point(12, 38)
+        Me.txtFname.MaxLength = 255
         Me.txtFname.Name = "txtFname"
         Me.txtFname.Size = New System.Drawing.Size(100, 20)
         Me.txtFname.TabIndex = 3
@@ -80,6 +81,7 @@ Partial Class CreateStudent
         'txtLname
         '
         Me.txtLname.Location = New System.Drawing.Point(148, 38)
+        Me.txtLname.MaxLength = 255
         Me.txtLname.Name = "txtLname"
         Me.txtLname.Size = New System.Drawing.Size(100, 20)
         Me.txtLname.TabIndex = 5
@@ -96,6 +98,7 @@ Partial Class CreateStudent
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(12, 100)
+        Me.txtUsername.MaxLength = 100
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(128, 20)
         Me.txtUsername.TabIndex = 7
@@ -112,6 +115,7 @@ Partial Class CreateStudent
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(12, 151)
+        Me.txtEmail.MaxLength = 255
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(175, 20)
         Me.txtEmail.TabIndex = 9
