@@ -10,6 +10,7 @@ Public Class MainForm
     Private WithEvents MenuStudentsStripMenuitem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuClassStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateStudentMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuCreateClassMenuItem As New System.Windows.Forms.ToolStripMenuItem()
 
 
     Private Sub mnuFile_UserInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFile_UserInformation.Click
@@ -95,6 +96,12 @@ Public Class MainForm
         MenuCreateStudentMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuCreateStudentMenuItem.Text = "Create Student"
         MenuStudentsStripMenuitem.DropDownItems.AddRange({MenuCreateStudentMenuItem})
+
+        MenuCreateClassMenuItem.Name = "MenuCreateClassMenuItem"
+        MenuCreateClassMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuCreateClassMenuItem.Text = "Create Class"
+        MenuClassStripMenuItem.DropDownItems.AddRange({MenuCreateClassMenuItem})
+
 
 
     End Sub
