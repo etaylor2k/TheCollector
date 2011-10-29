@@ -1,7 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 
-
-
 Public Class UserInfoForm
     ' This class is the UserInfoForm class which is representing the User Information form. With this form the user is able to update the information about their specific account
 

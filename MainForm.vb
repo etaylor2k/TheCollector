@@ -3,18 +3,6 @@ Imports System.Windows.Forms
 
 Public Class MainForm
 
-    ' Custom structure to represent the columns in the table
-    'Structure identity
-    '    Dim id As Integer
-    '    Dim username As String
-    '    Dim password As String
-    '    Dim level As Integer
-    '    Dim fname As String
-    '    Dim lname As String
-    '    Dim email As String
-
-    'End Structure
-
     Public userIdentity As identity
     Public connection As MySqlConnection
 
@@ -69,7 +57,12 @@ Public Class MainForm
 
     Private Sub createStudent(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateStudentMenuItem.Click
 
-        Dim dummy As Integer
+        'declare a new create student form
+        Dim createStudetForm As New CreateStudent
+        createStudetForm.MdiParent = Me
+
+        createStudetForm.Show()
+
     End Sub
 
     Private Sub createTeacher()
