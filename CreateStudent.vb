@@ -68,7 +68,7 @@ Public Class CreateStudent
 
                 End Try
 
-                If created Then MsgBox("Student Created")
+                If created Then MsgBox("Student Created") ' Alert the user that
 
             End If
 
