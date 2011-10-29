@@ -58,10 +58,12 @@ Public Class MainForm
     Private Sub createStudent(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateStudentMenuItem.Click
 
         'declare a new create student form
-        Dim createStudetForm As New CreateStudent
-        createStudetForm.MdiParent = Me
+        Dim createStudentForm As New CreateStudent
+        createStudentForm.MdiParent = Me
 
-        createStudetForm.Show()
+        createStudentForm.connection = Me.connection ' pass the connection information to the create student form
+
+        createStudentForm.Show()
 
     End Sub
 

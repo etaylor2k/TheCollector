@@ -17,6 +17,7 @@ Public Class UserInfoForm
         Dim updatedFname As Boolean = False
         Dim updatedLname As Boolean = False
         Dim updatedPW As Boolean = False
+        Dim updated As Boolean = False
 
         If (txtEmail.Text <> Me.uifUsersIdentity.email) And (Trim(txtEmail.Text) <> "") Then
             ' If the field has changed and it is not blank then upate the field
@@ -44,6 +45,7 @@ Public Class UserInfoForm
                 ' Also need to update the username on the Main Form
                 MainForm.userIdentity.username = txtUsername.Text
 
+                If updated <> True Then updated = True
             End If
 
         End If
@@ -59,6 +61,7 @@ Public Class UserInfoForm
                 ' Also update the first name o the main form
                 MainForm.userIdentity.fname = txtFname.Text
 
+                If updated <> True Then updated = True
             End If
         End If
 
@@ -72,7 +75,7 @@ Public Class UserInfoForm
 
                 ' Also update the last name on the main form
                 MainForm.userIdentity.level = txtLname.Text
-
+                If updated <> True Then updated = True
             End If
         End If
 
@@ -90,12 +93,15 @@ Public Class UserInfoForm
 
                     ' Also update the password on the main form
                     MainForm.userIdentity.password = txtNewPassword.Text
-
+                    If updated <> True Then updated = True
                 End If
             Else
                 MsgBox("Password not able to be changed")
             End If
         End If
+
+        If updated Then MsgBox("User account Updated")
+        Me.Close() ' Close the form
     End Sub
 
     Private Sub cmdCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
