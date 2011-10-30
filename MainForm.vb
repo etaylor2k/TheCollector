@@ -57,6 +57,12 @@ Public Class MainForm
         ' This subroutine is not expecting anything or will not return anything
 
         ' Declare a new create class form
+        Dim createNewClassForm As New CreateClassForm
+        createNewClassForm.MdiParent = Me
+
+        createNewClassForm.connection = Me.connection
+        createNewClassForm.ccfIdentity = Me.userIdentity
+        createNewClassForm.Show()
 
     End Sub
 

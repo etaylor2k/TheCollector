@@ -16,6 +16,7 @@ C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.exe
 C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.pdb
 C:\Users\etaylor2k\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateClassForm.resources
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateStudent.resources
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.LoginForm.resources
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MainForm.resources
