@@ -52,13 +52,19 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub addClass()
-        ' This subroutine will create the a class based off 
+    Private Sub addClass(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateClassMenuItem.Click
+        ' This subroutine will create a class
+        ' This subroutine is not expecting anything or will not return anything
+
+        ' Declare a new create class form
+
     End Sub
 
     Private Sub createStudent(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateStudentMenuItem.Click
+        ' This subroutine will create a student 
+        ' This subroutine does not expect anything and will not return anything. 
 
-        'declare a new create student form
+        ' Declare a new create student form
         Dim createStudentForm As New CreateStudent
         createStudentForm.MdiParent = Me
 
@@ -79,7 +85,6 @@ Public Class MainForm
     Private Sub createTeacherMenu()
         ' This subroutine will create the appropriate menus for a teacher's account
         ' This subroutine is not expecting anything or returning anything; but, will will create the menus for the teacher's account
-
 
 
         MenuStudentsStripMenuitem.Name = "MenuUserStripMenuitem"
@@ -145,27 +150,6 @@ Public Class MainForm
                 Call createStudentMenu()
 
         End Select
-
-
-        'Dim MenuUserStripMenuitem = New System.Windows.Forms.ToolStripMenuItem()
-        'Dim MenuClassStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        'Dim MenuHelpStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-
-        '' for the 
-        'MenuUserStripMenuitem.Name = "MenuUserStripMenuitem"
-        'MenuUserStripMenuitem.Size = New System.Drawing.Size(37, 20)
-        'MenuUserStripMenuitem.Text = "User"
-
-        'MenuClassStripMenuItem.Name = "MenuClassStripMenuItem"
-        'MenuClassStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        'MenuClassStripMenuItem.Text = "Classes"
-
-
-
-
-        '' Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {MenuUserStripMenuitem})
-        'Me.MenuStrip1.Items.AddRange({MenuUserStripMenuitem})
-
 
     End Sub
 End Class

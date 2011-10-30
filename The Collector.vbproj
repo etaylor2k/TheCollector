@@ -76,6 +76,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateClassForm.Designer.vb">
+      <DependentUpon>CreateClassForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateClassForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateStudent.Designer.vb">
       <DependentUpon>CreateStudent.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CreateClassForm.resx">
+      <DependentUpon>CreateClassForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateStudent.resx">
       <DependentUpon>CreateStudent.vb</DependentUpon>
     </EmbeddedResource>
