@@ -26,6 +26,14 @@ Partial Class CreateClassForm
         Me.cmdOk = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.comboCourse = New System.Windows.Forms.ComboBox()
+        Me.lblGradeLevel = New System.Windows.Forms.Label()
+        Me.comboGradeLevel = New System.Windows.Forms.ComboBox()
+        Me.lblSemester = New System.Windows.Forms.Label()
+        Me.comboSemester = New System.Windows.Forms.ComboBox()
+        Me.lblSection = New System.Windows.Forms.Label()
+        Me.lblYear = New System.Windows.Forms.Label()
+        Me.txtSection = New System.Windows.Forms.TextBox()
+        Me.txtYear = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lblCourse
@@ -63,11 +71,87 @@ Partial Class CreateClassForm
         Me.comboCourse.Size = New System.Drawing.Size(249, 21)
         Me.comboCourse.TabIndex = 4
         '
+        'lblGradeLevel
+        '
+        Me.lblGradeLevel.AutoSize = True
+        Me.lblGradeLevel.Location = New System.Drawing.Point(9, 67)
+        Me.lblGradeLevel.Name = "lblGradeLevel"
+        Me.lblGradeLevel.Size = New System.Drawing.Size(65, 13)
+        Me.lblGradeLevel.TabIndex = 5
+        Me.lblGradeLevel.Text = "Grade Level"
+        '
+        'comboGradeLevel
+        '
+        Me.comboGradeLevel.FormattingEnabled = True
+        Me.comboGradeLevel.Location = New System.Drawing.Point(80, 67)
+        Me.comboGradeLevel.Name = "comboGradeLevel"
+        Me.comboGradeLevel.Size = New System.Drawing.Size(181, 21)
+        Me.comboGradeLevel.TabIndex = 6
+        '
+        'lblSemester
+        '
+        Me.lblSemester.AutoSize = True
+        Me.lblSemester.Location = New System.Drawing.Point(9, 109)
+        Me.lblSemester.Name = "lblSemester"
+        Me.lblSemester.Size = New System.Drawing.Size(51, 13)
+        Me.lblSemester.TabIndex = 7
+        Me.lblSemester.Text = "Semester"
+        '
+        'comboSemester
+        '
+        Me.comboSemester.FormattingEnabled = True
+        Me.comboSemester.Location = New System.Drawing.Point(80, 106)
+        Me.comboSemester.Name = "comboSemester"
+        Me.comboSemester.Size = New System.Drawing.Size(181, 21)
+        Me.comboSemester.TabIndex = 8
+        '
+        'lblSection
+        '
+        Me.lblSection.AutoSize = True
+        Me.lblSection.Location = New System.Drawing.Point(54, 145)
+        Me.lblSection.Name = "lblSection"
+        Me.lblSection.Size = New System.Drawing.Size(43, 13)
+        Me.lblSection.TabIndex = 9
+        Me.lblSection.Text = "Section"
+        '
+        'lblYear
+        '
+        Me.lblYear.AutoSize = True
+        Me.lblYear.Location = New System.Drawing.Point(145, 145)
+        Me.lblYear.Name = "lblYear"
+        Me.lblYear.Size = New System.Drawing.Size(29, 13)
+        Me.lblYear.TabIndex = 10
+        Me.lblYear.Text = "Year"
+        '
+        'txtSection
+        '
+        Me.txtSection.Location = New System.Drawing.Point(57, 172)
+        Me.txtSection.MaxLength = 1
+        Me.txtSection.Name = "txtSection"
+        Me.txtSection.Size = New System.Drawing.Size(37, 20)
+        Me.txtSection.TabIndex = 11
+        '
+        'txtYear
+        '
+        Me.txtYear.Location = New System.Drawing.Point(148, 172)
+        Me.txtYear.MaxLength = 4
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(75, 20)
+        Me.txtYear.TabIndex = 12
+        '
         'CreateClassForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.txtYear)
+        Me.Controls.Add(Me.txtSection)
+        Me.Controls.Add(Me.lblYear)
+        Me.Controls.Add(Me.lblSection)
+        Me.Controls.Add(Me.comboSemester)
+        Me.Controls.Add(Me.lblSemester)
+        Me.Controls.Add(Me.comboGradeLevel)
+        Me.Controls.Add(Me.lblGradeLevel)
         Me.Controls.Add(Me.comboCourse)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
@@ -82,4 +166,12 @@ Partial Class CreateClassForm
     Friend WithEvents cmdOk As System.Windows.Forms.Button
     Friend WithEvents cmdCancel As System.Windows.Forms.Button
     Friend WithEvents comboCourse As System.Windows.Forms.ComboBox
+    Friend WithEvents lblGradeLevel As System.Windows.Forms.Label
+    Friend WithEvents comboGradeLevel As System.Windows.Forms.ComboBox
+    Friend WithEvents lblSemester As System.Windows.Forms.Label
+    Friend WithEvents comboSemester As System.Windows.Forms.ComboBox
+    Friend WithEvents lblSection As System.Windows.Forms.Label
+    Friend WithEvents lblYear As System.Windows.Forms.Label
+    Friend WithEvents txtSection As System.Windows.Forms.TextBox
+    Friend WithEvents txtYear As System.Windows.Forms.TextBox
 End Class
