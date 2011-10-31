@@ -30,3 +30,6 @@ C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
 C:\Users\etaylor2k\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateClassForm.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateStudent.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb

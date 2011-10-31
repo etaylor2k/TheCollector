@@ -76,6 +76,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateClassForm.Designer.vb">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateClassForm.resx">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </EmbeddedResource>
