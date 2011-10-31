@@ -13,10 +13,12 @@ Public Class CreateClassForm
 
         Dim sqlICommnad As New MySqlCommand
         Dim sqlIReader As MySqlDataReader
-        Dim dummy As String
+        'Dim dummy As Dictionary(Of String, Integer)
+        Dim dummy As Integer
+
 
         'If either one of the two required fields are empty then do not attempt to create the class 
-        If ((txtSection.Text = "") Or (txtYear.Text = "")) Then
+        If ((txtSection.Text <> "") And (txtYear.Text <> "")) Then
 
             ' To see if the connection is closed
             If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
@@ -24,7 +26,8 @@ Public Class CreateClassForm
             sqlICommnad.Connection = Me.connection
             sqlICommnad.CommandText = "select * from classes where "
 
-            dummy = Me.comboCourse.SelectedItem.Key
+            dummy = Me.comboCourse.SelectedValue
+
 
 
         End If
