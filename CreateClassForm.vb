@@ -12,13 +12,21 @@ Public Class CreateClassForm
         ' This subroutine is not expecting anything and will not return anything
 
         Dim sqlICommnad As New MySqlCommand
+        Dim sqlIReader As MySqlDataReader
+        Dim dummy As String
 
-        'If the two required fields are not populated then the user did not want to 
-        If ((txtSection.Text = "") And (txtYear.Text = "")) Then
+        'If either one of the two required fields are empty then do not attempt to create the class 
+        If ((txtSection.Text = "") Or (txtYear.Text = "")) Then
 
-            If () then 
-                ]
-            End If
+            ' To see if the connection is closed
+            If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+            sqlICommnad.Connection = Me.connection
+            sqlICommnad.CommandText = "select * from classes where "
+
+            dummy = Me.comboCourse.SelectedItem.Key
+
+
         End If
 
         Me.Close()
@@ -32,8 +40,7 @@ Public Class CreateClassForm
         Dim sqlCCommand As New MySqlCommand
         Dim sqlCReader As MySqlDataReader
         Dim list_string As String
-        'Dim item As 
-
+        Dim courses As New Dictionary(Of String, Integer)
 
         If (Me.connection.State = ConnectionState.Closed) Then
             ' if the connection is closed, open it
@@ -42,7 +49,7 @@ Public Class CreateClassForm
         End If
 
         sqlCCommand.Connection = Me.connection
-        sqlCCommand.CommandText = "select subjects.code,courses.number,courses.title from courses, teachers, subjects where courses.subject = teachers.tsubject and subjects.idsubjects = teachers.tsubject and teachers.user ='" + Me.ccfIdentity.id.ToString + "'"
+        sqlCCommand.CommandText = "select subjects.code,courses.number,courses.title, courses.idcourses from courses, teachers, subjects where courses.subject = teachers.tsubject and subjects.idsubjects = teachers.tsubject and teachers.user ='" + Me.ccfIdentity.id.ToString + "'"
         
         sqlCReader = sqlCCommand.ExecuteReader
 
@@ -50,9 +57,13 @@ Public Class CreateClassForm
             Do While sqlCReader.Read
                 ' If there are any results
                 list_string = sqlCReader.GetString(0) + sqlCReader.GetString(1) + " " + sqlCReader.GetString(2) ' create the string
-                Me.comboCourse.Items.Add(list_string) ' add it the the dropdown box
+                'Me.comboCourse.Items.Add(list_string) ' add it the the dropdown box
+                courses.Add(list_string, sqlCReader.GetUInt64(3))
 
             Loop
+            Me.comboCourse.DataSource = New BindingSource(courses, Nothing)
+            Me.comboCourse.DisplayMember = "Key"
+            Me.comboCourse.ValueMember = "Value"
             Me.comboCourse.SelectedIndex = 0 ' This will set the default item as the first item in the list
         End If
 
@@ -70,6 +81,7 @@ Public Class CreateClassForm
                 ' if there are any results then add them to the combo box
                 list_string = sqlCReader.GetString(0)
                 Me.comboGradeLevel.Items.Add(list_string)
+
             Loop
             Me.comboGradeLevel.SelectedIndex = 0 ' set the default item as the first in the list
         End If
@@ -87,11 +99,15 @@ Public Class CreateClassForm
                 ' if there are any results then add them to the combo box
                 list_string = sqlCReader.GetString(0)
                 Me.comboSemester.Items.Add(list_string)
+                ' Me.comboSemester.Items.
             Loop
             Me.comboSemester.SelectedIndex = 0 ' set the default item as the first in the list
         End If
 
         sqlCReader.Close() ' close the reader
+
+        'set the year text box to the current year
+        txtYear.Text = Now.Year.ToString
 
     End Sub
 
