@@ -32,8 +32,9 @@ Partial Class CreateClassForm
         Me.comboSemester = New System.Windows.Forms.ComboBox()
         Me.lblSection = New System.Windows.Forms.Label()
         Me.lblYear = New System.Windows.Forms.Label()
-        Me.txtSection = New System.Windows.Forms.TextBox()
-        Me.txtYear = New System.Windows.Forms.TextBox()
+        Me.numYear = New System.Windows.Forms.NumericUpDown()
+        Me.comboSection = New System.Windows.Forms.ComboBox()
+        CType(Me.numYear, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblCourse
@@ -123,29 +124,28 @@ Partial Class CreateClassForm
         Me.lblYear.TabIndex = 10
         Me.lblYear.Text = "Year"
         '
-        'txtSection
+        'numYear
         '
-        Me.txtSection.Location = New System.Drawing.Point(57, 172)
-        Me.txtSection.MaxLength = 1
-        Me.txtSection.Name = "txtSection"
-        Me.txtSection.Size = New System.Drawing.Size(37, 20)
-        Me.txtSection.TabIndex = 11
+        Me.numYear.Location = New System.Drawing.Point(148, 173)
+        Me.numYear.Name = "numYear"
+        Me.numYear.Size = New System.Drawing.Size(113, 20)
+        Me.numYear.TabIndex = 13
         '
-        'txtYear
+        'comboSection
         '
-        Me.txtYear.Location = New System.Drawing.Point(148, 172)
-        Me.txtYear.MaxLength = 4
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(75, 20)
-        Me.txtYear.TabIndex = 12
+        Me.comboSection.FormattingEnabled = True
+        Me.comboSection.Location = New System.Drawing.Point(53, 172)
+        Me.comboSection.Name = "comboSection"
+        Me.comboSection.Size = New System.Drawing.Size(34, 21)
+        Me.comboSection.TabIndex = 14
         '
         'CreateClassForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.txtYear)
-        Me.Controls.Add(Me.txtSection)
+        Me.Controls.Add(Me.comboSection)
+        Me.Controls.Add(Me.numYear)
         Me.Controls.Add(Me.lblYear)
         Me.Controls.Add(Me.lblSection)
         Me.Controls.Add(Me.comboSemester)
@@ -158,6 +158,7 @@ Partial Class CreateClassForm
         Me.Controls.Add(Me.lblCourse)
         Me.Name = "CreateClassForm"
         Me.Text = "Create Class"
+        CType(Me.numYear, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -172,6 +173,6 @@ Partial Class CreateClassForm
     Friend WithEvents comboSemester As System.Windows.Forms.ComboBox
     Friend WithEvents lblSection As System.Windows.Forms.Label
     Friend WithEvents lblYear As System.Windows.Forms.Label
-    Friend WithEvents txtSection As System.Windows.Forms.TextBox
-    Friend WithEvents txtYear As System.Windows.Forms.TextBox
+    Friend WithEvents numYear As System.Windows.Forms.NumericUpDown
+    Friend WithEvents comboSection As System.Windows.Forms.ComboBox
 End Class
