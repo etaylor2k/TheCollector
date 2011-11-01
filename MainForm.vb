@@ -44,6 +44,17 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub mnuFile_AboutTheCollector_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mnuFile_AboutTheCollector.Click
+        ' This subroutine will let the user view the about us window
+        ' This subroutine is not expecting ir returning anything
+
+        Dim aboutTheCollectorForm As New AboutTheCollector
+
+        aboutTheCollectorForm.MdiParent = Me
+        aboutTheCollectorForm.Show()
+
+    End Sub
+
     Private Sub mnuFile_Quit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mnuFile_Quit.Click
         ' This subroutine will let the user exit the application
         ' This subroutine is not expecting anything or passing anything to any other entity
@@ -126,6 +137,7 @@ Public Class MainForm
         Dim level_name As String = ""
         Dim sqlCommand As New MySqlCommand
         Dim sqlReader As MySqlDataReader
+        Dim aboutTheCollectorForm As New AboutTheCollector
 
         If Me.connection.State = ConnectionState.Closed Then
             ' if the connection is closed for some reason we need to reopen it
@@ -156,6 +168,9 @@ Public Class MainForm
                 Call createStudentMenu()
 
         End Select
+
+        aboutTheCollectorForm.MdiParent = Me
+        aboutTheCollectorForm.Show()
 
     End Sub
 End Class
