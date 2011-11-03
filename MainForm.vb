@@ -11,6 +11,7 @@ Public Class MainForm
     Private WithEvents MenuClassStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateStudentMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateClassMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuAddStudentToClassItem As New System.Windows.Forms.ToolStripMenuItem()
 
 
     Private Sub mnuFile_UserInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFile_UserInformation.Click
@@ -91,6 +92,12 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub assigStudentToClass(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuAddStudentToClassItem.Click
+        ' This subroutine will add a student to a specific class
+        ' This subroutine does not expect anything and will not return anything.
+
+
+    End Sub
     Private Sub createTeacher()
 
     End Sub
