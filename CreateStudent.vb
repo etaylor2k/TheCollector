@@ -14,7 +14,7 @@ Public Class CreateStudent
         Dim uniqueUsername As Boolean = False
         Dim uniqueEmail As Boolean = False
         Dim sqlICommnad As New MySqlCommand
-
+        Dim addedStudent As Boolean = False
 
         If ((txtEmail.Text <> "") And (txtUsername.Text <> "")) Then
             ' If the two required fields are not empty
@@ -63,12 +63,19 @@ Public Class CreateStudent
                 Try
                     sqlICommnad.ExecuteNonQuery() ' execute the insert
                     created = True
+
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
 
                 End Try
 
-                If created Then MsgBox("Student Created") ' Alert the user that
+                If created Then
+                    MsgBox("Student Created") ' Alert the user that
+                    addedStudent = addStudent(txtUsername.Text)
+
+                End If
+
 
             End If
 
@@ -116,4 +123,54 @@ Public Class CreateStudent
         Return isUnique
 
     End Function
+
+    Private Function addStudent(ByVal username As String) As Boolean
+        ' This function will create an entry in the students table
+        ' This function is expecting the username of the newly created student 
+
+        Dim sqlCommand As New MySqlCommand
+        Dim sqlReader As MySqlDataReader
+        Dim createdStudent As Boolean
+        Dim newStudentIndex As Integer
+
+        ' If the connection is closed, open it
+        If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+        sqlCommand.Connection = Me.connection
+        sqlCommand.CommandText = "select * from users where username ='" + username + "'"
+
+        Try
+            sqlReader = sqlCommand.ExecuteReader
+
+            If sqlReader.HasRows Then
+                ' If the newly created student was found
+                createdStudent = True
+                Do While sqlReader.Read
+                    newStudentIndex = sqlReader.GetInt64(0)
+
+                Loop
+
+                sqlReader.Close()
+
+                sqlCommand.CommandText = "insert into students(idstudents, student_user) VALUES(?idstudents, ?student_user)"
+                sqlCommand.Parameters.AddWithValue("?idstudents", DBNull.Value)
+                sqlCommand.Parameters.AddWithValue("student_user", newStudentIndex.ToString)
+
+                Try
+                    sqlCommand.ExecuteNonQuery() ' execute the insert
+
+
+                Catch ex As Exception
+                    MsgBox(ex.Message) ' this will deisplay 
+
+                End Try
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return createdStudent
+
+    End Function
+
 End Class
