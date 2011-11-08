@@ -94,10 +94,10 @@
     <Compile Include="CreateStudent.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="AssignStudent.Designer.vb">
+      <DependentUpon>AssignStudent.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="AssignStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Identity.vb" />
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="CreateStudent.resx">
       <DependentUpon>CreateStudent.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="AssignStudent.resx">
+      <DependentUpon>AssignStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>

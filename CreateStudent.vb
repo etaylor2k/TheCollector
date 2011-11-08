@@ -142,7 +142,7 @@ Public Class CreateStudent
         Try
             sqlReader = sqlCommand.ExecuteReader
 
-            If sqlReader.HasRows Then
+            If sqlReader.HasRows = True Then
                 ' If the newly created student was found
                 createdStudent = True
                 Do While sqlReader.Read

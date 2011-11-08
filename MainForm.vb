@@ -96,6 +96,13 @@ Public Class MainForm
         ' This subroutine will add a student to a specific class
         ' This subroutine does not expect anything and will not return anything.
 
+        Dim addStudentToCalssForm As New AssignStudent
+        addStudentToCalssForm.MdiParent = Me
+
+        addStudentToCalssForm.connection = Me.connection
+
+        addStudentToCalssForm.Show()
+
 
     End Sub
     Private Sub createTeacher()
@@ -110,26 +117,36 @@ Public Class MainForm
         ' This subroutine will create the appropriate menus for a teacher's account
         ' This subroutine is not expecting anything or returning anything; but, will will create the menus for the teacher's account
 
-
+        ' Creates the student Drop Down Menu
         MenuStudentsStripMenuitem.Name = "MenuUserStripMenuitem"
         MenuStudentsStripMenuitem.Size = New System.Drawing.Size(37, 20)
         MenuStudentsStripMenuitem.Text = "Students"
         Me.MenuStrip1.Items.AddRange({MenuStudentsStripMenuitem})
 
+        ' Creates the Classes Drop Down Menu
         MenuClassStripMenuItem.Name = "MenuClassStripMenuItem"
         MenuClassStripMenuItem.Size = New System.Drawing.Size(37, 20)
         MenuClassStripMenuItem.Text = "Classes"
         Me.MenuStrip1.Items.AddRange({MenuClassStripMenuItem})
 
+        ' Creates the Create Student Menu item under the Students Drop Down Menu
         MenuCreateStudentMenuItem.Name = "MenuCreateStudentMenuItem"
         MenuCreateStudentMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuCreateStudentMenuItem.Text = "Create Student"
         MenuStudentsStripMenuitem.DropDownItems.AddRange({MenuCreateStudentMenuItem})
 
+        ' Creates the Assign Student to class Dropdown under the Students Drop Down Menu
+        MenuAddStudentToClassItem.Name = "MenuAddStudentToClassItem"
+        MenuAddStudentToClassItem.Size = New System.Drawing.Size(163, 22)
+        MenuAddStudentToClassItem.Text = "Assign Student To Class"
+        MenuStudentsStripMenuitem.DropDownItems.AddRange({MenuAddStudentToClassItem})
+
+        ' Creates the Create Class Menu item under the Classes Drop Down Menu
         MenuCreateClassMenuItem.Name = "MenuCreateClassMenuItem"
         MenuCreateClassMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuCreateClassMenuItem.Text = "Create Class"
         MenuClassStripMenuItem.DropDownItems.AddRange({MenuCreateClassMenuItem})
+
 
 
 
