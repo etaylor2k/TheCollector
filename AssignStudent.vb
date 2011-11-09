@@ -77,6 +77,57 @@ Public Class AssignStudent
             Loop
             Me.comboClasses.SelectedIndex = 0
 
+            sqlReader.Close()
+
+        Else
+
+            sqlReader.Close()
+            MsgBox("No Classes on file for this teacher")
         End If
+    End Sub
+
+    Private Sub cmdOk_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdOk.Click
+        ' This subroutine will assign a student to a class
+        ' This subroutine is expecting a value for the student and class and then will
+
+        Dim sqlreader As MySqlDataReader
+        Dim sqlcommand As New MySqlCommand
+        Dim classValue As Integer
+        Dim studentValue As Integer
+
+        classValue = Me.classes.Item(Me.comboClasses.SelectedItem.ToString)
+        studentValue = Me.students.Item(Me.lstStudents.SelectedItem.ToString)
+
+        If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+        sqlcommand.Connection = Me.connection
+        sqlcommand.CommandText = "select * from student_classes where class ='" + classValue + "' and student ='" + studentValue + "'"
+
+        Try
+            sqlreader = sqlcommand.ExecuteReader()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+        If sqlreader.HasRows = True Then
+            ' If there is a class that comes back, the student is already assigned to that class
+            sqlreader.Close()
+
+            MsgBox("Student already assigned to class")
+
+        Else
+            ' The student is not a part of that class, add them
+
+            sqlreader.Close()
+
+            If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+            sqlcommand.CommandText = "insert into student_classes(idclasses, class, student) VALUES(?idclasses, ?course, ?grade_level, ?teacher, ?section, ?semester, ?year)"
+        End If
+
+        Me.Close()
+
     End Sub
 End Class
