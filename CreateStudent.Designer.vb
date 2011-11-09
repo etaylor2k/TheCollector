@@ -22,6 +22,7 @@ Partial Class CreateStudent
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateStudent))
         Me.cmdOk = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.lblFname = New System.Windows.Forms.Label()
@@ -36,25 +37,28 @@ Partial Class CreateStudent
         '
         'cmdOk
         '
+        Me.cmdOk.BackColor = System.Drawing.Color.White
         Me.cmdOk.Location = New System.Drawing.Point(43, 227)
         Me.cmdOk.Name = "cmdOk"
         Me.cmdOk.Size = New System.Drawing.Size(75, 23)
         Me.cmdOk.TabIndex = 0
         Me.cmdOk.Text = "Ok"
-        Me.cmdOk.UseVisualStyleBackColor = True
+        Me.cmdOk.UseVisualStyleBackColor = False
         '
         'cmdCancel
         '
+        Me.cmdCancel.BackColor = System.Drawing.Color.White
         Me.cmdCancel.Location = New System.Drawing.Point(154, 227)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdCancel.TabIndex = 1
         Me.cmdCancel.Text = "Cancel"
-        Me.cmdCancel.UseVisualStyleBackColor = True
+        Me.cmdCancel.UseVisualStyleBackColor = False
         '
         'lblFname
         '
         Me.lblFname.AutoSize = True
+        Me.lblFname.BackColor = System.Drawing.Color.Transparent
         Me.lblFname.Location = New System.Drawing.Point(12, 22)
         Me.lblFname.Name = "lblFname"
         Me.lblFname.Size = New System.Drawing.Size(57, 13)
@@ -72,6 +76,7 @@ Partial Class CreateStudent
         'lblLname
         '
         Me.lblLname.AutoSize = True
+        Me.lblLname.BackColor = System.Drawing.Color.Transparent
         Me.lblLname.Location = New System.Drawing.Point(145, 22)
         Me.lblLname.Name = "lblLname"
         Me.lblLname.Size = New System.Drawing.Size(58, 13)
@@ -89,6 +94,7 @@ Partial Class CreateStudent
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
+        Me.lblUsername.BackColor = System.Drawing.Color.Transparent
         Me.lblUsername.Location = New System.Drawing.Point(12, 84)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(55, 13)
@@ -106,6 +112,7 @@ Partial Class CreateStudent
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
+        Me.lblEmail.BackColor = System.Drawing.Color.Transparent
         Me.lblEmail.Location = New System.Drawing.Point(9, 135)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(32, 13)
@@ -124,6 +131,7 @@ Partial Class CreateStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(260, 262)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.lblEmail)
@@ -135,6 +143,7 @@ Partial Class CreateStudent
         Me.Controls.Add(Me.lblFname)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CreateStudent"
         Me.Text = " Create Student"
         Me.ResumeLayout(False)

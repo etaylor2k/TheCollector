@@ -22,6 +22,7 @@ Partial Class AssignStudent
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AssignStudent))
         Me.lstStudents = New System.Windows.Forms.ListBox()
         Me.comboClasses = New System.Windows.Forms.ComboBox()
         Me.cmdOk = New System.Windows.Forms.Button()
@@ -46,26 +47,29 @@ Partial Class AssignStudent
         '
         'cmdOk
         '
+        Me.cmdOk.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cmdOk.Location = New System.Drawing.Point(163, 133)
         Me.cmdOk.Name = "cmdOk"
         Me.cmdOk.Size = New System.Drawing.Size(75, 23)
         Me.cmdOk.TabIndex = 2
         Me.cmdOk.Text = "Ok"
-        Me.cmdOk.UseVisualStyleBackColor = True
+        Me.cmdOk.UseVisualStyleBackColor = False
         '
         'cmdCancel
         '
+        Me.cmdCancel.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cmdCancel.Location = New System.Drawing.Point(254, 133)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdCancel.TabIndex = 3
         Me.cmdCancel.Text = "Cancel"
-        Me.cmdCancel.UseVisualStyleBackColor = True
+        Me.cmdCancel.UseVisualStyleBackColor = False
         '
         'AssignStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(496, 174)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
