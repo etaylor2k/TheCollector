@@ -23,6 +23,7 @@ Public Class AssignStudent
         Dim studentString As String = ""
         Dim classesString As String = ""
 
+
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlCommand.Connection = Me.connection
@@ -94,6 +95,7 @@ Public Class AssignStudent
         Dim sqlcommand As New MySqlCommand
         Dim classValue As Integer
         Dim studentValue As Integer
+        Dim created As Boolean = False
 
         classValue = Me.classes.Item(Me.comboClasses.SelectedItem.ToString)
         studentValue = Me.students.Item(Me.lstStudents.SelectedItem.ToString)
@@ -101,7 +103,7 @@ Public Class AssignStudent
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
-        sqlcommand.CommandText = "select * from student_classes where class ='" + classValue + "' and student ='" + studentValue + "'"
+        sqlcommand.CommandText = "select * from class_students where class ='" + classValue.ToString + "' and student ='" + studentValue.ToString + "'"
 
         Try
             sqlreader = sqlcommand.ExecuteReader()
@@ -124,7 +126,25 @@ Public Class AssignStudent
 
             If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
-            sqlcommand.CommandText = "insert into student_classes(idclasses, class, student) VALUES(?idclasses, ?course, ?grade_level, ?teacher, ?section, ?semester, ?year)"
+            sqlcommand.CommandText = "insert into class_students(idclass_students, class, student) VALUES(?idclass_students, ?class, ?student)"
+
+            ' Replace the parameters
+            sqlcommand.Parameters.AddWithValue("?idclass_students", DBNull.Value)
+            sqlcommand.Parameters.AddWithValue("?class", classValue.ToString)
+            sqlcommand.Parameters.AddWithValue("?student", studentValue.ToString)
+
+
+            Try
+                sqlcommand.ExecuteNonQuery() ' execute the insert
+                created = True
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+
+            End Try
+
+            If created Then MsgBox("Student Assigned to Class") ' Alert the user that the student was assigned to the class
+
         End If
 
         Me.Close()
