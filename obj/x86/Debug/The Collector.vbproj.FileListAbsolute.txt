@@ -53,3 +53,4 @@ C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResourc
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateQuestionForm.resources

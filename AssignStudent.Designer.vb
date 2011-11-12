@@ -75,6 +75,7 @@ Partial Class AssignStudent
         Me.Controls.Add(Me.cmdOk)
         Me.Controls.Add(Me.comboClasses)
         Me.Controls.Add(Me.lstStudents)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AssignStudent"
         Me.Text = "Assign Student to Class"
         Me.ResumeLayout(False)
