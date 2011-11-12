@@ -23,18 +23,78 @@ Partial Class CreateQuestionForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateQuestionForm))
+        Me.cmdCreate = New System.Windows.Forms.Button()
+        Me.cmdCancel = New System.Windows.Forms.Button()
+        Me.cmdOk = New System.Windows.Forms.Button()
+        Me.lblInstructions = New System.Windows.Forms.Label()
+        Me.lstQuestionTypes = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
+        '
+        'cmdCreate
+        '
+        Me.cmdCreate.Location = New System.Drawing.Point(79, 254)
+        Me.cmdCreate.Name = "cmdCreate"
+        Me.cmdCreate.Size = New System.Drawing.Size(75, 23)
+        Me.cmdCreate.TabIndex = 0
+        Me.cmdCreate.Text = "Create"
+        Me.cmdCreate.UseVisualStyleBackColor = True
+        '
+        'cmdCancel
+        '
+        Me.cmdCancel.Location = New System.Drawing.Point(334, 254)
+        Me.cmdCancel.Name = "cmdCancel"
+        Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
+        Me.cmdCancel.TabIndex = 1
+        Me.cmdCancel.Text = "Cancel"
+        Me.cmdCancel.UseVisualStyleBackColor = True
+        '
+        'cmdOk
+        '
+        Me.cmdOk.Location = New System.Drawing.Point(211, 254)
+        Me.cmdOk.Name = "cmdOk"
+        Me.cmdOk.Size = New System.Drawing.Size(75, 23)
+        Me.cmdOk.TabIndex = 2
+        Me.cmdOk.Text = "Ok"
+        Me.cmdOk.UseVisualStyleBackColor = True
+        '
+        'lblInstructions
+        '
+        Me.lblInstructions.AutoSize = True
+        Me.lblInstructions.Location = New System.Drawing.Point(76, 35)
+        Me.lblInstructions.Name = "lblInstructions"
+        Me.lblInstructions.Size = New System.Drawing.Size(279, 13)
+        Me.lblInstructions.TabIndex = 3
+        Me.lblInstructions.Text = "Please select a question type and press the Create button"
+        '
+        'lstQuestionTypes
+        '
+        Me.lstQuestionTypes.FormattingEnabled = True
+        Me.lstQuestionTypes.Location = New System.Drawing.Point(79, 76)
+        Me.lstQuestionTypes.Name = "lstQuestionTypes"
+        Me.lstQuestionTypes.Size = New System.Drawing.Size(330, 134)
+        Me.lstQuestionTypes.TabIndex = 4
         '
         'CreateQuestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.The_Collector.My.Resources.Resources.bg
-        Me.ClientSize = New System.Drawing.Size(445, 289)
+        Me.ClientSize = New System.Drawing.Size(530, 289)
+        Me.Controls.Add(Me.lstQuestionTypes)
+        Me.Controls.Add(Me.lblInstructions)
+        Me.Controls.Add(Me.cmdOk)
+        Me.Controls.Add(Me.cmdCancel)
+        Me.Controls.Add(Me.cmdCreate)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CreateQuestionForm"
         Me.Text = "Create Question"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+    Friend WithEvents cmdCreate As System.Windows.Forms.Button
+    Friend WithEvents cmdCancel As System.Windows.Forms.Button
+    Friend WithEvents cmdOk As System.Windows.Forms.Button
+    Friend WithEvents lblInstructions As System.Windows.Forms.Label
+    Friend WithEvents lstQuestionTypes As System.Windows.Forms.ListBox
 End Class

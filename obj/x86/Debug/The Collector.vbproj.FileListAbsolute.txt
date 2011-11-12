@@ -40,8 +40,10 @@ C:\Users\Administrator\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AboutTheCollector.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateClassForm.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateQuestionForm.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateStudent.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AssignStudent.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateTrueOrFalseForm.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.WelcomeScreen.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.LoginForm.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MainForm.resources
@@ -53,4 +55,3 @@ C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResourc
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
-C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateQuestionForm.resources

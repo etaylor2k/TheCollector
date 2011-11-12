@@ -12,6 +12,9 @@ Public Class MainForm
     Private WithEvents MenuCreateStudentMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateClassMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuAddStudentToClassItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuQuestionStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuCreateQuesitonMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+
 
 
     Private Sub mnuFile_UserInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFile_UserInformation.Click
@@ -105,6 +108,22 @@ Public Class MainForm
 
 
     End Sub
+
+    Private Sub createQuestion(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateQuesitonMenuItem.Click
+        ' This subroutine will display the form to create a quesiton for the question bank
+
+        Dim createQuestion As New CreateQuestionForm
+
+        createQuestion.userIdentity = Me.userIdentity
+        createQuestion.connection = Me.connection
+
+        createQuestion.MdiParent = Me
+
+        createQuestion.Show()
+
+
+
+    End Sub
     Private Sub createTeacher()
 
     End Sub
@@ -129,6 +148,12 @@ Public Class MainForm
         MenuClassStripMenuItem.Text = "Classes"
         Me.MenuStrip1.Items.AddRange({MenuClassStripMenuItem})
 
+        ' Creates the Questions Drop Down Menu
+        MenuQuestionStripMenuItem.Name = "MenuQuestionStripMenuItem"
+        MenuQuestionStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        MenuQuestionStripMenuItem.Text = "Questions"
+        Me.MenuStrip1.Items.AddRange({MenuQuestionStripMenuItem})
+
         ' Creates the Create Student Menu item under the Students Drop Down Menu
         MenuCreateStudentMenuItem.Name = "MenuCreateStudentMenuItem"
         MenuCreateStudentMenuItem.Size = New System.Drawing.Size(163, 22)
@@ -146,6 +171,12 @@ Public Class MainForm
         MenuCreateClassMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuCreateClassMenuItem.Text = "Create Class"
         MenuClassStripMenuItem.DropDownItems.AddRange({MenuCreateClassMenuItem})
+
+        ' Creates the Create Question Menu item under the Questions Drop Down Menu
+        MenuCreateQuesitonMenuItem.Name = "MenuCreateQuesitonMenuItem"
+        MenuCreateQuesitonMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuCreateQuesitonMenuItem.Text = "Create Question"
+        MenuQuestionStripMenuItem.DropDownItems.AddRange({MenuCreateQuesitonMenuItem})
 
 
 

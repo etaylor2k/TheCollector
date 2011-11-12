@@ -127,6 +127,12 @@
     <Compile Include="AssignStudent.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CreateTrueOrFalseForm.Designer.vb">
+      <DependentUpon>CreateTrueOrFalseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTrueOrFalseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WelcomeScreen.Designer.vb">
       <DependentUpon>WelcomeScreen.vb</DependentUpon>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssignStudent.resx">
       <DependentUpon>AssignStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTrueOrFalseForm.resx">
+      <DependentUpon>CreateTrueOrFalseForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeScreen.resx">
       <DependentUpon>WelcomeScreen.vb</DependentUpon>
