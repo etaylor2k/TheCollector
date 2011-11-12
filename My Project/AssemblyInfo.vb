@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("The Collector is a testing platform that allows teacher's to administer tests to their students natively on thier platform.")> 
 <Assembly: AssemblyCompany("The Collective")> 
 <Assembly: AssemblyProduct("The Collector")> 
-<Assembly: AssemblyCopyright("Copyright ©  2011")> 
+<Assembly: AssemblyCopyright("Copyright ©Goblan, Massie, Taylor, Reddy, Yasar, Patta. St.Mary's University Students  2011")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

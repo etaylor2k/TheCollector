@@ -22,6 +22,7 @@ Partial Class CreateClassForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateClassForm))
         Me.lblCourse = New System.Windows.Forms.Label()
         Me.cmdOk = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
@@ -40,6 +41,7 @@ Partial Class CreateClassForm
         'lblCourse
         '
         Me.lblCourse.AutoSize = True
+        Me.lblCourse.BackColor = System.Drawing.Color.Transparent
         Me.lblCourse.Location = New System.Drawing.Point(9, 18)
         Me.lblCourse.Name = "lblCourse"
         Me.lblCourse.Size = New System.Drawing.Size(40, 13)
@@ -48,21 +50,23 @@ Partial Class CreateClassForm
         '
         'cmdOk
         '
+        Me.cmdOk.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmdOk.Location = New System.Drawing.Point(57, 227)
         Me.cmdOk.Name = "cmdOk"
         Me.cmdOk.Size = New System.Drawing.Size(75, 23)
         Me.cmdOk.TabIndex = 2
         Me.cmdOk.Text = "Ok"
-        Me.cmdOk.UseVisualStyleBackColor = True
+        Me.cmdOk.UseVisualStyleBackColor = False
         '
         'cmdCancel
         '
+        Me.cmdCancel.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmdCancel.Location = New System.Drawing.Point(148, 227)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdCancel.TabIndex = 3
         Me.cmdCancel.Text = "Cancel"
-        Me.cmdCancel.UseVisualStyleBackColor = True
+        Me.cmdCancel.UseVisualStyleBackColor = False
         '
         'comboCourse
         '
@@ -75,6 +79,7 @@ Partial Class CreateClassForm
         'lblGradeLevel
         '
         Me.lblGradeLevel.AutoSize = True
+        Me.lblGradeLevel.BackColor = System.Drawing.Color.Transparent
         Me.lblGradeLevel.Location = New System.Drawing.Point(9, 67)
         Me.lblGradeLevel.Name = "lblGradeLevel"
         Me.lblGradeLevel.Size = New System.Drawing.Size(65, 13)
@@ -92,6 +97,7 @@ Partial Class CreateClassForm
         'lblSemester
         '
         Me.lblSemester.AutoSize = True
+        Me.lblSemester.BackColor = System.Drawing.Color.Transparent
         Me.lblSemester.Location = New System.Drawing.Point(9, 109)
         Me.lblSemester.Name = "lblSemester"
         Me.lblSemester.Size = New System.Drawing.Size(51, 13)
@@ -109,6 +115,7 @@ Partial Class CreateClassForm
         'lblSection
         '
         Me.lblSection.AutoSize = True
+        Me.lblSection.BackColor = System.Drawing.Color.Transparent
         Me.lblSection.Location = New System.Drawing.Point(54, 145)
         Me.lblSection.Name = "lblSection"
         Me.lblSection.Size = New System.Drawing.Size(43, 13)
@@ -118,6 +125,7 @@ Partial Class CreateClassForm
         'lblYear
         '
         Me.lblYear.AutoSize = True
+        Me.lblYear.BackColor = System.Drawing.Color.Transparent
         Me.lblYear.Location = New System.Drawing.Point(145, 145)
         Me.lblYear.Name = "lblYear"
         Me.lblYear.Size = New System.Drawing.Size(29, 13)
@@ -143,6 +151,7 @@ Partial Class CreateClassForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(284, 262)
         Me.Controls.Add(Me.comboSection)
         Me.Controls.Add(Me.numYear)
@@ -156,6 +165,7 @@ Partial Class CreateClassForm
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
         Me.Controls.Add(Me.lblCourse)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CreateClassForm"
         Me.Text = "Create Class"
         CType(Me.numYear, System.ComponentModel.ISupportInitialize).EndInit()

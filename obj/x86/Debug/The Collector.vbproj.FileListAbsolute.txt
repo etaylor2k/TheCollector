@@ -36,3 +36,20 @@ C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResourc
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.exe
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.xml
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The Collector.pdb
+C:\Users\Mike-G\Documents\Repo\TheCollector\bin\Debug\The Collector.exe
+C:\Users\Mike-G\Documents\Repo\TheCollector\bin\Debug\The Collector.pdb
+C:\Users\Mike-G\Documents\Repo\TheCollector\bin\Debug\The Collector.xml
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AboutTheCollector.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateClassForm.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CreateStudent.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AssignStudent.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.LoginForm.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MainForm.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.Resources.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.SplashScreen.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.UserInfoForm.resources
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mike-G\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.WelcomeScreen.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.WelcomeScreen.resources
