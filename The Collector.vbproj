@@ -109,10 +109,22 @@
     <Compile Include="CreateClassForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CreateMultipleChoiceForm.Designer.vb">
+      <DependentUpon>CreateMultipleChoiceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateMultipleChoiceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateQuestionForm.Designer.vb">
       <DependentUpon>CreateQuestionForm.vb</DependentUpon>
     </Compile>
     <Compile Include="CreateQuestionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateShortAnswerFrom.Designer.vb">
+      <DependentUpon>CreateShortAnswerFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateShortAnswerFrom.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateStudent.Designer.vb">
@@ -188,8 +200,14 @@
     <EmbeddedResource Include="CreateClassForm.resx">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateMultipleChoiceForm.resx">
+      <DependentUpon>CreateMultipleChoiceForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateQuestionForm.resx">
       <DependentUpon>CreateQuestionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateShortAnswerFrom.resx">
+      <DependentUpon>CreateShortAnswerFrom.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateStudent.resx">
       <DependentUpon>CreateStudent.vb</DependentUpon>

@@ -45,14 +45,26 @@ Public Class CreateQuestionForm
         ' This subroutine is not expecting anything and will not return anything. 
 
         Dim trueOrFalse As New CreateTrueOrFalseForm
+        Dim shortAnswer As New CreateShortAnswerFrom
 
-        trueOrFalse.MdiParent = Me.MdiParent
-        trueOrFalse.connection = Me.connection
-        trueOrFalse.userIdentity = Me.userIdentity
+        Select Case Me.lstQuestionTypes.SelectedItem.ToString
+            Case "True or False"
+                trueOrFalse.MdiParent = Me.MdiParent
+                trueOrFalse.connection = Me.connection
+                trueOrFalse.userIdentity = Me.userIdentity
+                Me.Hide()
+                trueOrFalse.Show()
+
+            Case "Short Answer"
+                shortAnswer.MdiParent = Me.MdiParent
+                shortAnswer.connection = Me.connection
+                shortAnswer.userIdentity = Me.userIdentity
+                Me.Hide()
+                shortAnswer.Show()
+
+        End Select
 
 
-
-        trueOrFalse.Show()
         Me.Close()
 
 

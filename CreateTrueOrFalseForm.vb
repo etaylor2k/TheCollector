@@ -26,10 +26,11 @@ Public Class CreateTrueOrFalseForm
     End Sub
 
     Private Sub cmdOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOk.Click
-
+        ' This subroutine will load the 
     End Sub
 
     Private Sub cmdCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
-        ' This subroutine will close the 
+        ' This subroutine will close the form
+        ' This subroutine will not 
     End Sub
 End Class
