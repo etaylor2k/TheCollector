@@ -94,7 +94,7 @@ Public Class CreateMultipleChoiceForm
         Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
         Dim questionCreated As Boolean = False
-        Dim torfCreated As Boolean = False
+        Dim multipleCreated As Boolean = False
         Dim question As Integer
 
         If Me.connection.State = ConnectionState.Broken Then Me.connection.Open()
@@ -166,11 +166,31 @@ Public Class CreateMultipleChoiceForm
 
                     sqlreader.Close()
 
-                    ' add the call here
+                    multipleCreated = addMultipleChoiceAnswer(question, Trim(txtAnswerA.Text), checkA.Checked)
+
+                    If multipleCreated = True Then
+                        multipleCreated = addMultipleChoiceAnswer(question, Trim(txtAnswerB.Text), checkB.Checked)
+
+                        If multipleCreated = True Then
+                            multipleCreated = addMultipleChoiceAnswer(question, Trim(txtAnswerC.Text), checkC.Checked)
+
+                            If multipleCreated = True Then
+                                multipleCreated = addMultipleChoiceAnswer(question, Trim(txtAnswerD.Text), checkD.Checked)
+
+                            End If
+
+                        End If
+                    End If
+
+                    If multipleCreated = True Then
+                        MsgBox("Question Created")
+                    Else
+                        MsgBox("Error Creating Question")
+                    End If
                 End If
             Else
                 ' If the quesiton was not created
-                MsgBox("Error: quesiton not added to the T or F table")
+                MsgBox("Error: quesiton not added to the Multiple Choice table")
 
             End If
         End If
@@ -179,15 +199,25 @@ Public Class CreateMultipleChoiceForm
 
     End Sub
 
-    Public Function addMultipleChoiceAnswer() As Boolean
-        ' This function will 
+    Public Function addMultipleChoiceAnswer(ByVal question As Integer, ByVal text As String, ByVal correct As Boolean) As Boolean
+        ' This function will create a single choice for the multiple choice question
+
         Dim createdChoice As Boolean = False
         Dim sqlcom As New MySqlCommand
 
         sqlcom.Connection = Me.connection
-        sqlcom.CommandText = "insert into true_or_false(idtrue_or_false, tfquestion, correct_statement) VALUES(?idtrue_or_false, ?tfquestion, ?correct_statement)"
-        sqlcom.Parameters.AddWithValue("?idtrue_or_false", DBNull.Value)
-        sqlcom.Parameters.AddWithValue("?tfquestion", question.ToString)
+        sqlcom.CommandText = "insert into multiple_choices(idmultiple_choices, mcquestion, answer_text, correct_answer) VALUES(?idmultiple_choices, ?mcquestion, ?answer_text, ?correct_answer)"
+        sqlcom.Parameters.AddWithValue("?idmultiple_choices", DBNull.Value)
+        sqlcom.Parameters.AddWithValue("?mcquestion", question.ToString)
+        sqlcom.Parameters.AddWithValue("?answer_text", text)
+
+        If correct = True Then
+            sqlcom.Parameters.AddWithValue("?correct_answer", "1")
+
+        Else
+            sqlcom.Parameters.AddWithValue("?correct_answer", "0")
+
+        End If
 
         Try
             sqlcom.ExecuteNonQuery()
@@ -198,11 +228,7 @@ Public Class CreateMultipleChoiceForm
 
         End Try
 
-        If createdChoice = True Then
-            MsgBox("Question Created")
-        Else
-            MsgBox("Error creating quesiton")
+        Return createdChoice
 
-        End If
     End Function
 End Class

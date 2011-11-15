@@ -95,6 +95,7 @@ Public Class CreateQuestionForm
                 multipleChoice.MdiParent = Me.MdiParent
                 multipleChoice.connection = Me.connection
                 multipleChoice.userIdentity = Me.userIdentity
+                multipleChoice.subject = Me.subject
                 Me.Hide()
                 multipleChoice.Show()
 
@@ -145,6 +146,7 @@ Public Class CreateQuestionForm
                 multipleChoice.MdiParent = Me.MdiParent
                 multipleChoice.connection = Me.connection
                 multipleChoice.userIdentity = Me.userIdentity
+                multipleChoice.subject = Me.subject
                 Me.Hide()
                 multipleChoice.Show()
 
