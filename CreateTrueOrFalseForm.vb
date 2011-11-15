@@ -6,11 +6,6 @@ Public Class CreateTrueOrFalseForm
     Public subject As Integer
     Public type As Integer = 1
 
-    Private Sub CreateTrueOrFalseForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ' This sbroutine will 
-    End Sub
-
-
     Private Sub checkTorF_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checkTorF.CheckedChanged
         ' This subroutine will change the answer of the True or False question
         ' This subroutine is not expecting anything and will not return anything
@@ -82,7 +77,7 @@ Public Class CreateTrueOrFalseForm
             sqlreader.Close()
 
             If questionCreated = True Then
-                ' If the question actually got created then we need to add the rest of the contents to
+                ' If the question actually got created then we need to add the rest of the contents to the true or false table
 
                 If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 

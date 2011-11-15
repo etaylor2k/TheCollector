@@ -87,6 +87,7 @@ Public Class CreateQuestionForm
                 shortAnswer.MdiParent = Me.MdiParent
                 shortAnswer.connection = Me.connection
                 shortAnswer.userIdentity = Me.userIdentity
+                shortAnswer.subject = Me.subject
                 Me.Hide()
                 shortAnswer.Show()
 
@@ -136,6 +137,7 @@ Public Class CreateQuestionForm
                 shortAnswer.MdiParent = Me.MdiParent
                 shortAnswer.connection = Me.connection
                 shortAnswer.userIdentity = Me.userIdentity
+                shortAnswer.subject = Me.subject
                 Me.Hide()
                 shortAnswer.Show()
 
