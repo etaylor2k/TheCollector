@@ -16,7 +16,13 @@
         Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.LabelCompanyName.Text = My.Application.Info.CompanyName
-        Me.TextBoxDescription.Text = My.Application.Info.Description
+
+        ' Override the default place where the content comes from 
+        'Me.TextBoxDescription.Text = My.Application.Info.Description
+        Me.TextBoxDescription.Text = "Welcome to the Collector. The world's premier test taking/creating program."
+        Me.TextBoxDescription.Text = Me.TextBoxDescription.Text & vbNewLine + vbNewLine + "Please log into the Collector by entering your user name and password. The system will automatically define the role that  you belong to. It will allow the student to take a test and the teacher/facilitator to create one."
+        Me.TextBoxDescription.Text = Me.TextBoxDescription.Text & vbNewLine + vbNewLine + "To start taking a test, plese click on the 'Test' menu above. To update your information, or the information of a student, please click on the 'Student' menu item above. The classes and questions are for the teacher to be able to create classes, questions, and tests."
+
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click

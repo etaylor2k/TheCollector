@@ -28,6 +28,14 @@ Partial Class CreateMultipleChoiceForm
         Me.txtQuestion = New System.Windows.Forms.TextBox()
         Me.lblInstructions = New System.Windows.Forms.Label()
         Me.lblQuestion = New System.Windows.Forms.Label()
+        Me.checkA = New System.Windows.Forms.CheckBox()
+        Me.checkB = New System.Windows.Forms.CheckBox()
+        Me.checkC = New System.Windows.Forms.CheckBox()
+        Me.checkD = New System.Windows.Forms.CheckBox()
+        Me.txtAnswerA = New System.Windows.Forms.TextBox()
+        Me.txtAnswerB = New System.Windows.Forms.TextBox()
+        Me.txtAnswerC = New System.Windows.Forms.TextBox()
+        Me.txtAnswerD = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'cmdOk
@@ -73,12 +81,88 @@ Partial Class CreateMultipleChoiceForm
         Me.lblQuestion.TabIndex = 4
         Me.lblQuestion.Text = "Question"
         '
+        'checkA
+        '
+        Me.checkA.AutoSize = True
+        Me.checkA.Location = New System.Drawing.Point(196, 139)
+        Me.checkA.Name = "checkA"
+        Me.checkA.Size = New System.Drawing.Size(33, 17)
+        Me.checkA.TabIndex = 5
+        Me.checkA.Text = "A"
+        Me.checkA.UseVisualStyleBackColor = True
+        '
+        'checkB
+        '
+        Me.checkB.AutoSize = True
+        Me.checkB.Location = New System.Drawing.Point(196, 183)
+        Me.checkB.Name = "checkB"
+        Me.checkB.Size = New System.Drawing.Size(33, 17)
+        Me.checkB.TabIndex = 6
+        Me.checkB.Text = "B"
+        Me.checkB.UseVisualStyleBackColor = True
+        '
+        'checkC
+        '
+        Me.checkC.AutoSize = True
+        Me.checkC.Location = New System.Drawing.Point(196, 228)
+        Me.checkC.Name = "checkC"
+        Me.checkC.Size = New System.Drawing.Size(33, 17)
+        Me.checkC.TabIndex = 7
+        Me.checkC.Text = "C"
+        Me.checkC.UseVisualStyleBackColor = True
+        '
+        'checkD
+        '
+        Me.checkD.AutoSize = True
+        Me.checkD.Location = New System.Drawing.Point(196, 268)
+        Me.checkD.Name = "checkD"
+        Me.checkD.Size = New System.Drawing.Size(34, 17)
+        Me.checkD.TabIndex = 8
+        Me.checkD.Text = "D"
+        Me.checkD.UseVisualStyleBackColor = True
+        '
+        'txtAnswerA
+        '
+        Me.txtAnswerA.Location = New System.Drawing.Point(248, 139)
+        Me.txtAnswerA.Name = "txtAnswerA"
+        Me.txtAnswerA.Size = New System.Drawing.Size(241, 20)
+        Me.txtAnswerA.TabIndex = 9
+        '
+        'txtAnswerB
+        '
+        Me.txtAnswerB.Location = New System.Drawing.Point(248, 183)
+        Me.txtAnswerB.Name = "txtAnswerB"
+        Me.txtAnswerB.Size = New System.Drawing.Size(241, 20)
+        Me.txtAnswerB.TabIndex = 10
+        '
+        'txtAnswerC
+        '
+        Me.txtAnswerC.Location = New System.Drawing.Point(248, 226)
+        Me.txtAnswerC.Name = "txtAnswerC"
+        Me.txtAnswerC.Size = New System.Drawing.Size(241, 20)
+        Me.txtAnswerC.TabIndex = 11
+        '
+        'txtAnswerD
+        '
+        Me.txtAnswerD.Location = New System.Drawing.Point(248, 268)
+        Me.txtAnswerD.Name = "txtAnswerD"
+        Me.txtAnswerD.Size = New System.Drawing.Size(241, 20)
+        Me.txtAnswerD.TabIndex = 12
+        '
         'CreateMultipleChoiceForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.The_Collector.My.Resources.Resources.bg
         Me.ClientSize = New System.Drawing.Size(497, 400)
+        Me.Controls.Add(Me.txtAnswerD)
+        Me.Controls.Add(Me.txtAnswerC)
+        Me.Controls.Add(Me.txtAnswerB)
+        Me.Controls.Add(Me.txtAnswerA)
+        Me.Controls.Add(Me.checkD)
+        Me.Controls.Add(Me.checkC)
+        Me.Controls.Add(Me.checkB)
+        Me.Controls.Add(Me.checkA)
         Me.Controls.Add(Me.lblQuestion)
         Me.Controls.Add(Me.lblInstructions)
         Me.Controls.Add(Me.txtQuestion)
@@ -96,4 +180,12 @@ Partial Class CreateMultipleChoiceForm
     Friend WithEvents txtQuestion As System.Windows.Forms.TextBox
     Friend WithEvents lblInstructions As System.Windows.Forms.Label
     Friend WithEvents lblQuestion As System.Windows.Forms.Label
+    Friend WithEvents checkA As System.Windows.Forms.CheckBox
+    Friend WithEvents checkB As System.Windows.Forms.CheckBox
+    Friend WithEvents checkC As System.Windows.Forms.CheckBox
+    Friend WithEvents checkD As System.Windows.Forms.CheckBox
+    Friend WithEvents txtAnswerA As System.Windows.Forms.TextBox
+    Friend WithEvents txtAnswerB As System.Windows.Forms.TextBox
+    Friend WithEvents txtAnswerC As System.Windows.Forms.TextBox
+    Friend WithEvents txtAnswerD As System.Windows.Forms.TextBox
 End Class

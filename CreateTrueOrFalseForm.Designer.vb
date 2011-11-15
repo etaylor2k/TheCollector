@@ -25,7 +25,7 @@ Partial Class CreateTrueOrFalseForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateTrueOrFalseForm))
         Me.cmdOk = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtQuestion = New System.Windows.Forms.TextBox()
         Me.checkTorF = New System.Windows.Forms.CheckBox()
         Me.lblInstructions = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -48,12 +48,12 @@ Partial Class CreateTrueOrFalseForm
         Me.cmdCancel.Text = "Cancel"
         Me.cmdCancel.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtQuestion
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 42)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(428, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.txtQuestion.Location = New System.Drawing.Point(12, 42)
+        Me.txtQuestion.Name = "txtQuestion"
+        Me.txtQuestion.Size = New System.Drawing.Size(428, 20)
+        Me.txtQuestion.TabIndex = 2
         '
         'checkTorF
         '
@@ -82,7 +82,7 @@ Partial Class CreateTrueOrFalseForm
         Me.ClientSize = New System.Drawing.Size(565, 136)
         Me.Controls.Add(Me.lblInstructions)
         Me.Controls.Add(Me.checkTorF)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtQuestion)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -94,7 +94,7 @@ Partial Class CreateTrueOrFalseForm
     End Sub
     Friend WithEvents cmdOk As System.Windows.Forms.Button
     Friend WithEvents cmdCancel As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtQuestion As System.Windows.Forms.TextBox
     Friend WithEvents checkTorF As System.Windows.Forms.CheckBox
     Friend WithEvents lblInstructions As System.Windows.Forms.Label
 End Class

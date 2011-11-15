@@ -12,15 +12,6 @@ Public Class CreateShortAnswerFrom
         Dim sqlcommand As New MySqlCommand
         Dim sqlreader As MySqlDataReader
 
-        ' select the text in the textboxes so that the user knows to overwrite them
-        Me.txtQuestion.Text = "Question"
-        'Me.txtQuestion.SelectAll()
-        Me.txtQuestion.SelectionStart = 0
-        Me.txtQuestion.SelectionLength = Me.txtQuestion.Text.Length
-
-        Me.txtAnswer.Text = "Answer"
-        Me.txtAnswer.SelectAll()
-
         ' assign the 
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 

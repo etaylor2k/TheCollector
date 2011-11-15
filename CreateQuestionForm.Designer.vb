@@ -25,14 +25,13 @@ Partial Class CreateQuestionForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateQuestionForm))
         Me.cmdCreate = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
-        Me.cmdOk = New System.Windows.Forms.Button()
         Me.lblInstructions = New System.Windows.Forms.Label()
         Me.lstQuestionTypes = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'cmdCreate
         '
-        Me.cmdCreate.Location = New System.Drawing.Point(79, 254)
+        Me.cmdCreate.Location = New System.Drawing.Point(151, 254)
         Me.cmdCreate.Name = "cmdCreate"
         Me.cmdCreate.Size = New System.Drawing.Size(75, 23)
         Me.cmdCreate.TabIndex = 0
@@ -41,21 +40,12 @@ Partial Class CreateQuestionForm
         '
         'cmdCancel
         '
-        Me.cmdCancel.Location = New System.Drawing.Point(334, 254)
+        Me.cmdCancel.Location = New System.Drawing.Point(253, 254)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdCancel.TabIndex = 1
         Me.cmdCancel.Text = "Cancel"
         Me.cmdCancel.UseVisualStyleBackColor = True
-        '
-        'cmdOk
-        '
-        Me.cmdOk.Location = New System.Drawing.Point(211, 254)
-        Me.cmdOk.Name = "cmdOk"
-        Me.cmdOk.Size = New System.Drawing.Size(75, 23)
-        Me.cmdOk.TabIndex = 2
-        Me.cmdOk.Text = "Ok"
-        Me.cmdOk.UseVisualStyleBackColor = True
         '
         'lblInstructions
         '
@@ -82,19 +72,16 @@ Partial Class CreateQuestionForm
         Me.ClientSize = New System.Drawing.Size(530, 289)
         Me.Controls.Add(Me.lstQuestionTypes)
         Me.Controls.Add(Me.lblInstructions)
-        Me.Controls.Add(Me.cmdOk)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdCreate)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CreateQuestionForm"
-        Me.Text = "Create Question"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmdCreate As System.Windows.Forms.Button
     Friend WithEvents cmdCancel As System.Windows.Forms.Button
-    Friend WithEvents cmdOk As System.Windows.Forms.Button
     Friend WithEvents lblInstructions As System.Windows.Forms.Label
     Friend WithEvents lstQuestionTypes As System.Windows.Forms.ListBox
 End Class
