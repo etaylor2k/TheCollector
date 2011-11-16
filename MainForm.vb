@@ -14,6 +14,9 @@ Public Class MainForm
     Private WithEvents MenuAddStudentToClassItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuQuestionStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateQuesitonMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuTestStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuCreateTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuAssignQuestionMenuItem As New System.Windows.Forms.ToolStripMenuItem()
 
 
 
@@ -102,6 +105,7 @@ Public Class MainForm
         Dim addStudentToCalssForm As New AssignStudent
         addStudentToCalssForm.MdiParent = Me
 
+        addStudentToCalssForm.userIdentity = Me.userIdentity
         addStudentToCalssForm.connection = Me.connection
 
         addStudentToCalssForm.Show()
@@ -120,6 +124,37 @@ Public Class MainForm
         createQuestion.MdiParent = Me
 
         createQuestion.Show()
+
+
+
+    End Sub
+
+    Private Sub addQuestionToTest(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuAssignQuestionMenuItem.Click
+        ' This subroutine will assign a question to the appropriate test
+        ' This subroutine does not expect or return anything
+
+        Dim addQuestionToTest As New AssignQuestion
+
+        addQuestionToTest.connection = Me.connection
+        addQuestionToTest.userIdentity = Me.userIdentity
+
+        addQuestionToTest.MdiParent = Me
+
+        addQuestionToTest.Show()
+
+    End Sub
+
+    Private Sub createTest(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateTestMenuItem.Click
+        ' This subroutine will display the form to create a test
+
+        Dim createTest As New CreateTest
+
+        createTest.userIdentity = Me.userIdentity
+        createTest.connection = Me.connection
+
+        createTest.MdiParent = Me
+
+        createTest.Show()
 
 
 
@@ -154,6 +189,12 @@ Public Class MainForm
         MenuQuestionStripMenuItem.Text = "Questions"
         Me.MenuStrip1.Items.AddRange({MenuQuestionStripMenuItem})
 
+        ' Creates the Test Drop Down Menu
+        MenuTestStripMenuItem.Name = "MenuTestStripMenuItem"
+        MenuTestStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        MenuTestStripMenuItem.Text = "Tests"
+        Me.MenuStrip1.Items.AddRange({MenuTestStripMenuItem})
+
         ' Creates the Create Student Menu item under the Students Drop Down Menu
         MenuCreateStudentMenuItem.Name = "MenuCreateStudentMenuItem"
         MenuCreateStudentMenuItem.Size = New System.Drawing.Size(163, 22)
@@ -178,8 +219,17 @@ Public Class MainForm
         MenuCreateQuesitonMenuItem.Text = "Create Question"
         MenuQuestionStripMenuItem.DropDownItems.AddRange({MenuCreateQuesitonMenuItem})
 
+        ' Creates the Create Test Menu item under the Tests Drop Down Menu
+        MenuCreateTestMenuItem.Name = "MenuCreateTestMenuItem"
+        MenuCreateTestMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuCreateTestMenuItem.Text = "Create Test"
+        MenuTestStripMenuItem.DropDownItems.AddRange({MenuCreateTestMenuItem})
 
-
+        ' Creates the Assign Test Menu item under the Tests Drop Down Menu
+        MenuAssignQuestionMenuItem.Name = "MenuAssignQuestionMenuItem"
+        MenuAssignQuestionMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuAssignQuestionMenuItem.Text = "Assign Question to Test"
+        MenuTestStripMenuItem.DropDownItems.AddRange({MenuAssignQuestionMenuItem})
 
     End Sub
 
@@ -224,8 +274,10 @@ Public Class MainForm
 
         End Select
 
+        ' To initially show the login page
         aboutTheCollectorForm.MdiParent = Me
         aboutTheCollectorForm.Show()
 
     End Sub
+
 End Class

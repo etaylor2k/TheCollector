@@ -79,13 +79,6 @@ Public Class CreateMultipleChoiceForm
         ' This subroutine will close the form
         ' This subroutine is not expecting or returning anything
 
-        Dim createQuestion As New CreateQuestionForm
-
-        createQuestion.connection = Me.connection
-        createQuestion.MdiParent = Me.MdiParent
-
-        Me.Hide()
-        createQuestion.Show()
         Me.Close()
 
     End Sub

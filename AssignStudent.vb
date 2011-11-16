@@ -5,6 +5,7 @@ Public Class AssignStudent
     Public connection As MySqlConnection
     Private students As New Dictionary(Of String, Integer) ' This will represent the dictionary of students in the list box
     Private classes As New Dictionary(Of String, Integer) ' This will represent the dictionary of classes in the combo box
+    Public userIdentity As Identity
 
     Private Sub cmdCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
         ' This subroutine will cancel all operations for this form
@@ -58,7 +59,7 @@ Public Class AssignStudent
 
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
-        sqlCommand.CommandText = "select subjects.code, courses.number, courses.title, semesters.name, classes.year, classes.idclasses from classes,courses, subjects, semesters where classes.teacher =2 and courses.subject = subjects.idsubjects and classes.semester = semesters.idsemester"
+        sqlCommand.CommandText = "select subjects.code, courses.number, courses.title, semesters.name, classes.year, classes.idclasses from classes,courses, subjects, semesters where classes.teacher ='" + Me.userIdentity.id.ToString + "' and courses.subject = subjects.idsubjects and classes.semester = semesters.idsemester"
 
         Try
             sqlReader = sqlCommand.ExecuteReader

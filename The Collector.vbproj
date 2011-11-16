@@ -104,6 +104,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AssignQuestion.Designer.vb">
+      <DependentUpon>AssignQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AssignQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateClassForm.Designer.vb">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,12 @@
       <DependentUpon>AssignStudent.vb</DependentUpon>
     </Compile>
     <Compile Include="AssignStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTest.Designer.vb">
+      <DependentUpon>CreateTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateTrueOrFalseForm.Designer.vb">
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="AboutTheCollector.resx">
       <DependentUpon>AboutTheCollector.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AssignQuestion.resx">
+      <DependentUpon>AssignQuestion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateClassForm.resx">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssignStudent.resx">
       <DependentUpon>AssignStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTest.resx">
+      <DependentUpon>CreateTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTrueOrFalseForm.resx">
       <DependentUpon>CreateTrueOrFalseForm.vb</DependentUpon>
