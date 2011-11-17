@@ -268,7 +268,7 @@ Public Class MainForm
         Dim level_name As String = ""
         Dim sqlCommand As New MySqlCommand
         Dim sqlReader As MySqlDataReader
-        Dim aboutTheCollectorForm As New AboutTheCollector
+        Dim welcomeScreen As New WelcomeScreen
 
         If Me.connection.State = ConnectionState.Closed Then
             ' if the connection is closed for some reason we need to reopen it
@@ -301,8 +301,8 @@ Public Class MainForm
         End Select
 
         ' To initially show the login page
-        aboutTheCollectorForm.MdiParent = Me
-        aboutTheCollectorForm.Show()
+        welcomeScreen.MdiParent = Me
+        welcomeScreen.Show()
 
     End Sub
 

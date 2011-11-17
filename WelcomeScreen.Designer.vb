@@ -34,9 +34,9 @@ Partial Class WelcomeScreen
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(506, 370)
+        Me.PictureBox1.Location = New System.Drawing.Point(683, 423)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(229, 159)
+        Me.PictureBox1.Size = New System.Drawing.Size(165, 118)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -57,7 +57,7 @@ Partial Class WelcomeScreen
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(58, 119)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(600, 248)
+        Me.Label1.Size = New System.Drawing.Size(600, 357)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -77,7 +77,7 @@ Partial Class WelcomeScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(731, 525)
+        Me.ClientSize = New System.Drawing.Size(860, 539)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)

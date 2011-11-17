@@ -711,7 +711,7 @@
 </value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
-    <value>Welcome to the Collector Test taking Application, This App will make taking tests more user friendly and easy to handle by both faculty and students. To navigate, Choose your selection from the top menu</value>
+    <value>Welcome to the Collector Test taking Application. This App will make taking tests more user friendly and easy to handle by both faculty and students. If you are a student, please click the test menu item to take your test. for Administrators and Teachers, choose your selection from the top menu</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
