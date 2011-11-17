@@ -17,6 +17,9 @@ Public Class MainForm
     Private WithEvents MenuTestStripMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCreateTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuAssignQuestionMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuTakeTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+
+
 
 
 
@@ -113,6 +116,17 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub takeTest(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuTakeTestMenuItem.Click
+
+        Dim takeTestForm As New TakeTest
+
+        takeTestForm.MdiParent = Me
+        takeTestForm.connection = Me.connection
+        takeTestForm.userIdentity = Me.userIdentity
+        takeTestForm.Show()
+
+    End Sub
+
     Private Sub createQuestion(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateQuesitonMenuItem.Click
         ' This subroutine will display the form to create a quesiton for the question bank
 
@@ -124,6 +138,7 @@ Public Class MainForm
         createQuestion.MdiParent = Me
 
         createQuestion.Show()
+
 
 
 
@@ -235,6 +250,17 @@ Public Class MainForm
 
     Private Sub createStudentMenu()
 
+        ' Creates the test Drop Down Menu
+        MenuTestStripMenuItem.Name = "MenuTestStripMenuItem"
+        MenuTestStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        MenuTestStripMenuItem.Text = "Test"
+        Me.MenuStrip1.Items.AddRange({MenuTestStripMenuItem})
+
+        ' Creates the Take Test Menu item under the Tests Drop Down Menu
+        MenuTakeTestMenuItem.Name = "MenuTakeTestMenuItem"
+        MenuTakeTestMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuTakeTestMenuItem.Text = "Take Test"
+        MenuTestStripMenuItem.DropDownItems.AddRange({MenuTakeTestMenuItem})
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

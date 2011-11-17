@@ -4,7 +4,7 @@ Public Class CreateMultipleChoiceForm
     Public userIdentity As Identity
     Public connection As MySqlConnection
     Public subject As Integer
-    Public type As Integer = 1
+    Public type As Integer = 3
 
     Private Sub CreateMultipleChoiceForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

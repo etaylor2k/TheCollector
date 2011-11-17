@@ -110,6 +110,24 @@
     <Compile Include="AssignQuestion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TrueOrFalseForm.Designer.vb">
+      <DependentUpon>TrueOrFalseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrueOrFalseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortAnswerFrom.Designer.vb">
+      <DependentUpon>ShortAnswerFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShortAnswerFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleChoiceForm.Designer.vb">
+      <DependentUpon>MultipleChoiceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleChoiceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateClassForm.Designer.vb">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </Compile>
@@ -156,6 +174,12 @@
       <DependentUpon>CreateTrueOrFalseForm.vb</DependentUpon>
     </Compile>
     <Compile Include="CreateTrueOrFalseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TakeTest.Designer.vb">
+      <DependentUpon>TakeTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TakeTest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WelcomeScreen.Designer.vb">
@@ -213,6 +237,15 @@
     <EmbeddedResource Include="AssignQuestion.resx">
       <DependentUpon>AssignQuestion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrueOrFalseForm.resx">
+      <DependentUpon>TrueOrFalseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortAnswerFrom.resx">
+      <DependentUpon>ShortAnswerFrom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleChoiceForm.resx">
+      <DependentUpon>MultipleChoiceForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateClassForm.resx">
       <DependentUpon>CreateClassForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTrueOrFalseForm.resx">
       <DependentUpon>CreateTrueOrFalseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TakeTest.resx">
+      <DependentUpon>TakeTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeScreen.resx">
       <DependentUpon>WelcomeScreen.vb</DependentUpon>
