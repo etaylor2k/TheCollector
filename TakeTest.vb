@@ -128,7 +128,13 @@ Public Class TakeTest
 
                 Case 3
                     ' This will show the multiple choice question form
-
+                    multipleChoice.question = question
+                    multipleChoice.connection = Me.connection
+                    multipleChoice.userIdentity = Me.userIdentity
+                    multipleChoice.txtQuestion.Text = question_text
+                    multipleChoice.test = test
+                    multipleChoice.txtQuestion.ReadOnly = True
+                    multipleChoice.ShowDialog() ' this will show the form as a modal
 
             End Select
            
@@ -136,7 +142,47 @@ Public Class TakeTest
             question_text = ""
 
         Next
+        MsgBox("Test Complete")
+        Call gradeTest(questions, test)
 
+    End Sub
+
+    Private Sub gradeTest(ByVal questionList As ArrayList, ByVal test As Integer)
+        ' This subroutine will grade the test 
+        ' This subroutine is expecting the list of questions and the id of the test and is not returning anything
+
+        Dim sqlcommand As New MySqlCommand
+        Dim sqlreader As MySqlDataReader
+        Dim questionCount As Integer = questionList.Count
+        Dim correct As Integer
+        Dim score As Decimal
+
+
+        If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+        sqlcommand.Connection = Me.connection
+        sqlcommand.CommandText = "select count(*) from answers where correct =1 and atest ='" + test.ToString + "' and astudent ='" + Me.userIdentity.id.ToString + "'"
+
+        Try
+            sqlreader = sqlcommand.ExecuteReader
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+
+        If sqlreader.HasRows = True Then
+            Do While sqlreader.Read
+                correct = sqlreader.GetInt64(0)
+            Loop
+
+        End If
+
+        score = (correct / questionCount) * 100
+
+        MsgBox("You had " + correct.ToString + " out of " + questionCount.ToString + "  correct for a score of " + Format(score, "0.00").ToString)
+
+        sqlreader.Close()
 
     End Sub
 End Class
