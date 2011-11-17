@@ -30,9 +30,17 @@ Public Class TakeTest
                 Me.lstTests.Items.Add(testString)
 
             Loop
+
+            Me.lstTests.SelectedIndex = 0
+            sqlreader.Close()
+        Else
+            sqlreader.Close()
+            MsgBox("No Tests to Take")
+            Me.Close()
+
         End If
 
-        sqlreader.Close()
+
 
     End Sub
 
@@ -89,7 +97,7 @@ Public Class TakeTest
             If sqlreader.HasRows = True Then
                 Do While sqlreader.Read
                     question_text = sqlreader.GetString(1)
-                    qtype = sqlreader.GetInt64(3)
+                    qtype = sqlreader.GetInt64(2)
 
                 Loop
 
@@ -99,7 +107,7 @@ Public Class TakeTest
 
             Select Case qtype
                 Case 1
-                    ' True or False Forms
+                    ' True or False question form
                     trueOrFalse.question = question
                     trueOrFalse.connection = Me.connection
                     trueOrFalse.userIdentity = Me.userIdentity
@@ -110,12 +118,22 @@ Public Class TakeTest
 
                 Case 2
                     ' This will show the short answer form
-                    'shortAnswer()
+                    shortAnswer.question = question
+                    shortAnswer.connection = Me.connection
+                    shortAnswer.userIdentity = Me.userIdentity
+                    shortAnswer.txtQuestion.Text = question_text
+                    shortAnswer.test = test
+                    shortAnswer.txtQuestion.ReadOnly = True
+                    shortAnswer.ShowDialog() ' this will show the form as a modal
+
+                Case 3
+                    ' This will show the multiple choice question form
 
 
             End Select
            
-
+            qtype = 0
+            question_text = ""
 
         Next
 

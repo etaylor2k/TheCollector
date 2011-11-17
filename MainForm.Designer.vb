@@ -46,30 +46,30 @@ Partial Class MainForm
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile_UserInformation, Me.mnuFile_AboutTheCollector, Me.ToolStripSeparator1, Me.mnuFile_Quit})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'mnuFile_UserInformation
         '
         Me.mnuFile_UserInformation.Name = "mnuFile_UserInformation"
-        Me.mnuFile_UserInformation.Size = New System.Drawing.Size(169, 22)
+        Me.mnuFile_UserInformation.Size = New System.Drawing.Size(181, 22)
         Me.mnuFile_UserInformation.Text = "User Information"
         '
         'mnuFile_AboutTheCollector
         '
         Me.mnuFile_AboutTheCollector.Name = "mnuFile_AboutTheCollector"
-        Me.mnuFile_AboutTheCollector.Size = New System.Drawing.Size(169, 22)
+        Me.mnuFile_AboutTheCollector.Size = New System.Drawing.Size(181, 22)
         Me.mnuFile_AboutTheCollector.Text = "About The Collector"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(166, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(178, 6)
         '
         'mnuFile_Quit
         '
         Me.mnuFile_Quit.Name = "mnuFile_Quit"
-        Me.mnuFile_Quit.Size = New System.Drawing.Size(169, 22)
+        Me.mnuFile_Quit.Size = New System.Drawing.Size(181, 22)
         Me.mnuFile_Quit.Text = "Quit"
         '
         'MainForm
@@ -83,6 +83,7 @@ Partial Class MainForm
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainForm"
         Me.Text = "The Collector"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

@@ -1,10 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class MultipleChoiceForm
-    Public userIdentity As Identity
     Public connection As MySqlConnection
+    Public userIdentity As Identity
+    Public test As Integer
     Public question As Integer
-    Public type As Integer = 1
+    Public answer As Boolean = False
 
     Private Sub CreateMultipleChoiceForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

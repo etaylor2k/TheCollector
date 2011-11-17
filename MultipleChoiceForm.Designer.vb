@@ -68,9 +68,8 @@ Partial Class MultipleChoiceForm
         Me.lblInstructions.AutoSize = True
         Me.lblInstructions.Location = New System.Drawing.Point(93, 18)
         Me.lblInstructions.Name = "lblInstructions"
-        Me.lblInstructions.Size = New System.Drawing.Size(347, 13)
+        Me.lblInstructions.Size = New System.Drawing.Size(0, 13)
         Me.lblInstructions.TabIndex = 3
-        Me.lblInstructions.Text = "Please enter the questions and answers and indicate the correct answer"
         '
         'lblQuestion
         '
@@ -149,7 +148,7 @@ Partial Class MultipleChoiceForm
         Me.txtAnswerD.Size = New System.Drawing.Size(241, 20)
         Me.txtAnswerD.TabIndex = 12
         '
-        'CreateMultipleChoiceForm
+        'MultipleChoiceForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -169,8 +168,8 @@ Partial Class MultipleChoiceForm
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.cmdOk)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "CreateMultipleChoiceForm"
-        Me.Text = "Create Multiple Choice Question"
+        Me.Name = "MultipleChoiceForm"
+        Me.Text = "Multiple Choice Question"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

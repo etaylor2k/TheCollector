@@ -92,7 +92,7 @@ Public Class CreateShortAnswerFrom
                     sqlcommand.CommandText = "insert into short_answers(idshort_answer, saquestion, sa_answer) VALUES(?idshort_answer, ?saquestion, ?sa_answer)"
                     sqlcommand.Parameters.AddWithValue("?idshort_answer", DBNull.Value)
                     sqlcommand.Parameters.AddWithValue("?saquestion", question.ToString)
-                    sqlcommand.Parameters.AddWithValue("?sa_answer", question.ToString)
+                    sqlcommand.Parameters.AddWithValue("?sa_answer", Me.txtAnswer.ToString)
 
                     Try
                         sqlcommand.ExecuteNonQuery()

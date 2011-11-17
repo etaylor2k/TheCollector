@@ -24,17 +24,17 @@ Public Class TrueOrFalseForm
     End Sub
 
     Private Sub cmdOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOk.Click
-        ' This subroutine will create the question if it is unique to the subject
+        ' This subroutine will see if the student entered the correct answer and record the results
         ' This form is not expecting or returning anything
 
-        Dim sqlreader As MySqlDataReader
+        ' Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
         Dim created As Boolean = False
 
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
-        sqlcommand.CommandText = "insert into test_questions(idanswers, astudent, atest, aquestion, correct) VALUES(?idanswers, ?astudent, ?atest, ?aquestion, ?correct)"
+        sqlcommand.CommandText = "insert into answers(idanswers, astudent, atest, aquestion, correct) VALUES(?idanswers, ?astudent, ?atest, ?aquestion, ?correct)"
 
         ' Replace the parameters
         sqlcommand.Parameters.AddWithValue("?idanswers", DBNull.Value)
