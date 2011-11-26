@@ -19,6 +19,7 @@ Public Class CreateShortAnswerFrom
         Dim questionCreated As Boolean = False
         Dim question As Integer
         Dim shortCreated As Boolean = False
+        Dim answer As String
 
         If Me.connection.State = ConnectionState.Broken Then Me.connection.Open()
 
@@ -88,11 +89,12 @@ Public Class CreateShortAnswerFrom
 
                     sqlreader.Close()
 
+                    answer = Me.txtAnswer.Text
                     sqlcommand.Connection = Me.connection
                     sqlcommand.CommandText = "insert into short_answers(idshort_answer, saquestion, sa_answer) VALUES(?idshort_answer, ?saquestion, ?sa_answer)"
                     sqlcommand.Parameters.AddWithValue("?idshort_answer", DBNull.Value)
                     sqlcommand.Parameters.AddWithValue("?saquestion", question.ToString)
-                    sqlcommand.Parameters.AddWithValue("?sa_answer", Me.txtAnswer.ToString)
+                    sqlcommand.Parameters.AddWithValue("?sa_answer", Trim(answer))
 
                     Try
                         sqlcommand.ExecuteNonQuery()

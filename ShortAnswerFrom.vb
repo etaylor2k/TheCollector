@@ -7,7 +7,7 @@ Public Class ShortAnswerFrom
     Public question As Integer
     Public answer As String
 
-    Private Sub CreateShortAnswerFrom_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub ShortAnswerFrom_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' This subroutine will get the correct answer from the database from this question
         ' This subroutine is not expecting or returning anything 
 
@@ -41,6 +41,7 @@ Public Class ShortAnswerFrom
 
         End If
 
+        Me.txtAnswer.Text = ""
     End Sub
 
     Private Sub cmdOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOk.Click

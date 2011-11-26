@@ -52,9 +52,9 @@ Public Class TakeTest
         Dim questions As New ArrayList
         Dim qtype As Integer
         Dim question_text As String
-        Dim multipleChoice As New MultipleChoiceForm
-        Dim trueOrFalse As New TrueOrFalseForm
-        Dim shortAnswer As New ShortAnswerFrom
+        'Dim multipleChoice As New MultipleChoiceForm
+        'Dim trueOrFalse As New TrueOrFalseForm
+        'Dim shortAnswer As New ShortAnswerFrom
 
 
         test = Me.tests.Item(Me.lstTests.SelectedItem.ToString)
@@ -62,7 +62,7 @@ Public Class TakeTest
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
-        sqlcommand.CommandText = " select * from test_questions where tqtest ='" + test.ToString + "'"
+        sqlcommand.CommandText = "select * from answers where astudent =3 and atest =1"
 
         Try
             sqlreader = sqlcommand.ExecuteReader
@@ -72,19 +72,14 @@ Public Class TakeTest
 
         End Try
 
-        If sqlreader.HasRows = True Then
-            Do While sqlreader.Read
-                questions.Add(sqlreader.GetInt64(2))
+        If sqlreader.HasRows = False Then
 
-            Loop
-        End If
+            sqlreader.Close()
 
-        sqlreader.Close()
 
-        For Each question In questions
+
             If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
-
-            sqlcommand.CommandText = "select * from questions where idquestions ='" + question.ToString + "'"
+            sqlcommand.CommandText = " select * from test_questions where tqtest ='" + test.ToString + "'"
 
             Try
                 sqlreader = sqlcommand.ExecuteReader
@@ -96,54 +91,90 @@ Public Class TakeTest
 
             If sqlreader.HasRows = True Then
                 Do While sqlreader.Read
-                    question_text = sqlreader.GetString(1)
-                    qtype = sqlreader.GetInt64(2)
+                    questions.Add(sqlreader.GetInt64(2))
 
                 Loop
-
             End If
 
             sqlreader.Close()
 
-            Select Case qtype
-                Case 1
-                    ' True or False question form
-                    trueOrFalse.question = question
-                    trueOrFalse.connection = Me.connection
-                    trueOrFalse.userIdentity = Me.userIdentity
-                    trueOrFalse.txtQuestion.Text = question_text
-                    trueOrFalse.test = test
-                    trueOrFalse.txtQuestion.ReadOnly = True
-                    trueOrFalse.ShowDialog() ' this will show the form as a modal
+            For Each question In questions
+                If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
-                Case 2
-                    ' This will show the short answer form
-                    shortAnswer.question = question
-                    shortAnswer.connection = Me.connection
-                    shortAnswer.userIdentity = Me.userIdentity
-                    shortAnswer.txtQuestion.Text = question_text
-                    shortAnswer.test = test
-                    shortAnswer.txtQuestion.ReadOnly = True
-                    shortAnswer.ShowDialog() ' this will show the form as a modal
+                sqlcommand.CommandText = "select * from questions where idquestions ='" + question.ToString + "'"
 
-                Case 3
-                    ' This will show the multiple choice question form
-                    multipleChoice.question = question
-                    multipleChoice.connection = Me.connection
-                    multipleChoice.userIdentity = Me.userIdentity
-                    multipleChoice.txtQuestion.Text = question_text
-                    multipleChoice.test = test
-                    multipleChoice.txtQuestion.ReadOnly = True
-                    multipleChoice.ShowDialog() ' this will show the form as a modal
+                Try
+                    sqlreader = sqlcommand.ExecuteReader
 
-            End Select
-           
-            qtype = 0
-            question_text = ""
+                Catch ex As Exception
+                    MsgBox(ex.Message)
 
-        Next
-        MsgBox("Test Complete")
-        Call gradeTest(questions, test)
+                End Try
+
+                If sqlreader.HasRows = True Then
+                    Do While sqlreader.Read
+                        question_text = sqlreader.GetString(1)
+                        qtype = sqlreader.GetInt64(2)
+
+                    Loop
+
+                End If
+
+                sqlreader.Close()
+
+                Select Case qtype
+                    Case 1
+                        ' True or False question form
+                        Dim trueOrFalse As New TrueOrFalseForm
+                        trueOrFalse.question = question
+                        trueOrFalse.connection = Me.connection
+                        trueOrFalse.userIdentity = Me.userIdentity
+                        trueOrFalse.txtQuestion.Text = question_text
+                        trueOrFalse.test = test
+                        trueOrFalse.txtQuestion.ReadOnly = True
+                        trueOrFalse.ShowDialog() ' this will show the form as a modal
+                        trueOrFalse.Dispose()
+
+
+                    Case 2
+                        ' This will show the short answer form
+                        Dim shortAnswer As New ShortAnswerFrom
+                        shortAnswer.question = question
+                        shortAnswer.connection = Me.connection
+                        shortAnswer.userIdentity = Me.userIdentity
+                        shortAnswer.txtQuestion.Text = question_text
+                        shortAnswer.test = test
+                        shortAnswer.txtQuestion.ReadOnly = True
+                        shortAnswer.ShowDialog() ' this will show the form as a modal
+                        shortAnswer.Dispose()
+
+                    Case 3
+                        ' This will show the multiple choice question form
+                        Dim multipleChoice As New MultipleChoiceForm
+                        multipleChoice.question = question
+                        multipleChoice.connection = Me.connection
+                        multipleChoice.userIdentity = Me.userIdentity
+                        multipleChoice.txtQuestion.Text = question_text
+                        multipleChoice.test = test
+                        multipleChoice.txtQuestion.ReadOnly = True
+                        multipleChoice.ShowDialog() ' this will show the form as a modal
+                        multipleChoice.Dispose()
+
+
+                End Select
+
+                qtype = 0
+                question_text = ""
+
+            Next
+            MsgBox("Test Complete")
+            Call gradeTest(questions, test)
+        Else
+            sqlreader.Close()
+            MsgBox("You've already taken this test")
+
+        End If
+
 
     End Sub
 
@@ -180,7 +211,7 @@ Public Class TakeTest
 
         score = (correct / questionCount) * 100
 
-        MsgBox("You had " + correct.ToString + " out of " + questionCount.ToString + "  correct for a score of " + Format(score, "0.00").ToString)
+        MsgBox("You had " + correct.ToString + " out of " + questionCount.ToString + "  answeres correct for a score of " + Format(score, "0.00").ToString)
 
         sqlreader.Close()
 
