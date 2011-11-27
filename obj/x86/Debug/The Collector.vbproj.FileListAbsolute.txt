@@ -41,6 +41,7 @@ C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\ResolveAssembly
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AboutTheCollector.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.AssignQuestion.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CheckGrades.resources
+C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.CheckRoster.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.TrueOrFalseForm.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.ShortAnswerFrom.resources
 C:\Users\Administrator\Documents\Repo\TheCollector\obj\x86\Debug\The_Collector.MultipleChoiceForm.resources

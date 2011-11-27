@@ -19,10 +19,7 @@ Public Class MainForm
     Private WithEvents MenuAssignQuestionMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuTakeTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuCheckGradesMenuItem As New System.Windows.Forms.ToolStripMenuItem()
-
-
-
-
+    Private WithEvents MenuCheckRosterMenuItem As New System.Windows.Forms.ToolStripMenuItem()
 
     Private Sub mnuFile_UserInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFile_UserInformation.Click
         ' This subroutine will send the users identity to the USer Inforamtion form so that the user can modify the information
@@ -99,6 +96,20 @@ Public Class MainForm
         createStudentForm.connection = Me.connection ' pass the connection information to the create student form
 
         createStudentForm.Show()
+
+    End Sub
+
+    Private Sub showClassRoster(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCheckRosterMenuItem.Click
+        ' This subroutine will show a teacher's class roster
+        ' This subroutine is not expecting or returning anything
+
+        Dim classRoster As New CheckRoster
+        classRoster.MdiParent = Me
+
+        classRoster.userIdentity = Me.userIdentity
+        classRoster.connection = Me.connection
+
+        classRoster.Show()
 
     End Sub
 
@@ -261,6 +272,12 @@ Public Class MainForm
         MenuAssignQuestionMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuAssignQuestionMenuItem.Text = "Assign Question to Test"
         MenuTestStripMenuItem.DropDownItems.AddRange({MenuAssignQuestionMenuItem})
+
+        ' Creates the Check Roster to class Dropdown under the Students Drop Down Menu
+        MenuCheckRosterMenuItem.Name = "MenuCheckRosterMenuItem"
+        MenuCheckRosterMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuCheckRosterMenuItem.Text = "Show Roster"
+        MenuClassStripMenuItem.DropDownItems.AddRange({MenuCheckRosterMenuItem})
 
     End Sub
 

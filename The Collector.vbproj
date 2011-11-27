@@ -116,6 +116,12 @@
     <Compile Include="CheckGrades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CheckRoster.Designer.vb">
+      <DependentUpon>CheckRoster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckRoster.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TrueOrFalseForm.Designer.vb">
       <DependentUpon>TrueOrFalseForm.vb</DependentUpon>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckGrades.resx">
       <DependentUpon>CheckGrades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckRoster.resx">
+      <DependentUpon>CheckRoster.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrueOrFalseForm.resx">
       <DependentUpon>TrueOrFalseForm.vb</DependentUpon>

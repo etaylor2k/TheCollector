@@ -33,6 +33,12 @@ Public Class CheckGrades
                 gradeString = ""
 
             Loop
+        Else
+            ' If there are not any results
+            MsgBox("No Test Grades on File")
+
+            Me.Close()
+
         End If
 
         sqlreader.Close()
