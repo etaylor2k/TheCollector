@@ -62,7 +62,7 @@ Public Class TakeTest
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
-        sqlcommand.CommandText = "select * from answers where astudent =3 and atest =1"
+        sqlcommand.CommandText = "select * from answers where astudent ='" + Me.userIdentity.id.ToString + "' and atest ='" + test.ToString + "'"
 
         Try
             sqlreader = sqlcommand.ExecuteReader
@@ -175,6 +175,7 @@ Public Class TakeTest
 
         End If
 
+        Me.Close()
 
     End Sub
 
@@ -187,7 +188,7 @@ Public Class TakeTest
         Dim questionCount As Integer = questionList.Count
         Dim correct As Integer
         Dim score As Decimal
-
+        Dim created As Boolean = False
 
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
@@ -210,10 +211,43 @@ Public Class TakeTest
         End If
 
         score = (correct / questionCount) * 100
+        score = Format(score, "0.00")
 
-        MsgBox("You had " + correct.ToString + " out of " + questionCount.ToString + "  answeres correct for a score of " + Format(score, "0.00").ToString)
+        MsgBox("You had " + correct.ToString + " out of " + questionCount.ToString + "  answeres correct for a score of " + score.ToString)
 
         sqlreader.Close()
+
+        If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
+
+        sqlcommand.CommandText = "insert into grades(idgrades, gstudent, gtest, grade) VALUES(?idgrades, ?gstudent, ?gtest, ?grade)"
+
+        ' Replace the parameters
+        sqlcommand.Parameters.AddWithValue("?idgrades", DBNull.Value)
+        sqlcommand.Parameters.AddWithValue("?gstudent", Me.userIdentity.id.ToString)
+        sqlcommand.Parameters.AddWithValue("?gtest", test.ToString)
+        sqlcommand.Parameters.AddWithValue("?grade", score.ToString)
+
+        Try
+            sqlcommand.ExecuteNonQuery()
+            created = True
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+
+        If created = False Then
+            MsgBox("Error recording grade")
+
+        End If
+
+    End Sub
+
+    Private Sub cmdCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click
+        ' This subroutine will be called when the user clicks the cancel button
+        ' This subroutine is not expecting or returning anything
+
+        Me.Close()
 
     End Sub
 End Class

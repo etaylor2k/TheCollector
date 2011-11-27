@@ -32,7 +32,7 @@ Partial Class TrueOrFalseForm
         '
         'cmdOk
         '
-        Me.cmdOk.Location = New System.Drawing.Point(245, 103)
+        Me.cmdOk.Location = New System.Drawing.Point(364, 103)
         Me.cmdOk.Name = "cmdOk"
         Me.cmdOk.Size = New System.Drawing.Size(75, 23)
         Me.cmdOk.TabIndex = 0
@@ -41,7 +41,7 @@ Partial Class TrueOrFalseForm
         '
         'cmdCancel
         '
-        Me.cmdCancel.Location = New System.Drawing.Point(388, 103)
+        Me.cmdCancel.Location = New System.Drawing.Point(485, 103)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdCancel.TabIndex = 1
@@ -52,13 +52,14 @@ Partial Class TrueOrFalseForm
         '
         Me.txtQuestion.Location = New System.Drawing.Point(12, 42)
         Me.txtQuestion.Name = "txtQuestion"
-        Me.txtQuestion.Size = New System.Drawing.Size(535, 20)
+        Me.txtQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtQuestion.Size = New System.Drawing.Size(750, 20)
         Me.txtQuestion.TabIndex = 2
         '
         'checkTorF
         '
         Me.checkTorF.AutoSize = True
-        Me.checkTorF.Location = New System.Drawing.Point(553, 45)
+        Me.checkTorF.Location = New System.Drawing.Point(791, 45)
         Me.checkTorF.Name = "checkTorF"
         Me.checkTorF.Size = New System.Drawing.Size(51, 17)
         Me.checkTorF.TabIndex = 3
@@ -78,7 +79,7 @@ Partial Class TrueOrFalseForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.The_Collector.My.Resources.Resources.bg
-        Me.ClientSize = New System.Drawing.Size(680, 147)
+        Me.ClientSize = New System.Drawing.Size(867, 147)
         Me.Controls.Add(Me.lblInstructions)
         Me.Controls.Add(Me.checkTorF)
         Me.Controls.Add(Me.txtQuestion)

@@ -18,6 +18,7 @@ Public Class MainForm
     Private WithEvents MenuCreateTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuAssignQuestionMenuItem As New System.Windows.Forms.ToolStripMenuItem()
     Private WithEvents MenuTakeTestMenuItem As New System.Windows.Forms.ToolStripMenuItem()
+    Private WithEvents MenuCheckGradesMenuItem As New System.Windows.Forms.ToolStripMenuItem()
 
 
 
@@ -174,6 +175,12 @@ Public Class MainForm
 
 
     End Sub
+
+    Private Sub checkGrades(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCheckGradesMenuItem.Click
+        ' This subroutine will display the form to check grades
+
+
+    End Sub
     Private Sub createTeacher()
 
     End Sub
@@ -261,6 +268,14 @@ Public Class MainForm
         MenuTakeTestMenuItem.Size = New System.Drawing.Size(163, 22)
         MenuTakeTestMenuItem.Text = "Take Test"
         MenuTestStripMenuItem.DropDownItems.AddRange({MenuTakeTestMenuItem})
+
+        ' Creates the Check Grades Drop Down Menu
+        MenuCheckGradesMenuItem.Name = "MenuCheckGradesMenuItem"
+        MenuCheckGradesMenuItem.Size = New System.Drawing.Size(163, 22)
+        MenuCheckGradesMenuItem.Text = "Check Grades"
+        MenuTestStripMenuItem.DropDownItems.AddRange({MenuCheckGradesMenuItem})
+
+
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

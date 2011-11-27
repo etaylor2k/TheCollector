@@ -54,6 +54,7 @@ Partial Class ShortAnswerFrom
         '
         Me.txtQuestion.Location = New System.Drawing.Point(26, 67)
         Me.txtQuestion.Name = "txtQuestion"
+        Me.txtQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtQuestion.Size = New System.Drawing.Size(500, 20)
         Me.txtQuestion.TabIndex = 2
         '
