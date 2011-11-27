@@ -23,16 +23,16 @@ Partial Class CheckGrades
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CheckGrades))
-        Me.lblTestGrades = New System.Windows.Forms.ListBox()
+        Me.lstTestGrades = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
-        'lblTestGrades
+        'lstTestGrades
         '
-        Me.lblTestGrades.FormattingEnabled = True
-        Me.lblTestGrades.Location = New System.Drawing.Point(85, 25)
-        Me.lblTestGrades.Name = "lblTestGrades"
-        Me.lblTestGrades.Size = New System.Drawing.Size(338, 199)
-        Me.lblTestGrades.TabIndex = 0
+        Me.lstTestGrades.FormattingEnabled = True
+        Me.lstTestGrades.Location = New System.Drawing.Point(85, 25)
+        Me.lstTestGrades.Name = "lstTestGrades"
+        Me.lstTestGrades.Size = New System.Drawing.Size(338, 199)
+        Me.lstTestGrades.TabIndex = 0
         '
         'CheckGrades
         '
@@ -40,12 +40,12 @@ Partial Class CheckGrades
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.The_Collector.My.Resources.Resources.bg
         Me.ClientSize = New System.Drawing.Size(508, 307)
-        Me.Controls.Add(Me.lblTestGrades)
+        Me.Controls.Add(Me.lstTestGrades)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CheckGrades"
         Me.Text = "Check Test Grades"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents lblTestGrades As System.Windows.Forms.ListBox
+    Friend WithEvents lstTestGrades As System.Windows.Forms.ListBox
 End Class

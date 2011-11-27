@@ -178,7 +178,16 @@ Public Class MainForm
 
     Private Sub checkGrades(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCheckGradesMenuItem.Click
         ' This subroutine will display the form to check grades
+        ' This subroutine is not expecting or returning anything
 
+        Dim checkGrades As New CheckGrades
+
+        checkGrades.userIdentitiy = Me.userIdentity
+        checkGrades.connection = Me.connection
+
+        checkGrades.MdiParent = Me
+
+        checkGrades.Show()
 
     End Sub
     Private Sub createTeacher()
