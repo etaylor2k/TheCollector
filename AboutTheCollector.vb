@@ -1,6 +1,13 @@
-﻿Public NotInheritable Class AboutTheCollector
+﻿' AboutTheCollector
+' Endris Taylor for the Collective
+' This class will display the About us form
+
+Public NotInheritable Class AboutTheCollector
 
     Private Sub AboutBox1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'This subroutine will load the about us page
+        ' This subroutine is not expecting or returning anything
+
         ' Set the title of the form.
         Dim ApplicationTitle As String
         If My.Application.Info.Title <> "" Then
@@ -26,14 +33,10 @@
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
+        ' This subroutine will close the about us page when the ok button is pressed
+        ' This subroutine is not expecting or returning anything
+
         Me.Close()
     End Sub
 
-    Private Sub LabelProductName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LabelProductName.Click
-
-    End Sub
-
-    Private Sub TextBoxDescription_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxDescription.TextChanged
-
-    End Sub
 End Class

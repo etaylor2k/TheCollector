@@ -1,18 +1,25 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' LoginForm
+' This class represents the login functionality
+' Endris Taylor for the collective
+
+Imports MySql.Data.MySqlClient ' MySql functionalities
 
 Public Class LoginForm
 
+    ' class variable
     Dim numberOfTries As Integer
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOK.Click
         ' This is the subroutine that handles the authentication of the applicaitons
         ' For our purposes this sunroutine is not expecting anything and passing the identity of the user to the next form if authenticated
 
+        ' declarations
         Dim connection As MySqlConnection
         Dim sqlReader As MySqlDataReader
         Dim sqlCommand As New MySqlCommand
         Dim authenticated As Boolean = False
 
+        ' establish the connection for the application instance and the proper connection string
         connection = New MySqlConnection
         connection.ConnectionString = "Server=localhost; Uid=appuser; Pwd=password; Database=thecollector; Port=3306"
 
@@ -90,7 +97,4 @@ Public Class LoginForm
         Me.Close()
     End Sub
 
-    Private Sub UsernameTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUser.TextChanged
-
-    End Sub
 End Class

@@ -1,8 +1,13 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.Windows.Forms
+﻿' MainForm
+' This class represents the main form of the application
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql Fucntionality
+Imports System.Windows.Forms ' windows forms
 
 Public Class MainForm
 
+    ' Class Variables
     Public userIdentity As identity
     Public connection As MySqlConnection
 
@@ -47,7 +52,7 @@ Public Class MainForm
         'send the connection string
         usersInfoForm.connection = Me.connection
 
-        usersInfoForm.Show()
+        usersInfoForm.Show() ' Show he orm
 
 
     End Sub
@@ -59,7 +64,7 @@ Public Class MainForm
         Dim aboutTheCollectorForm As New AboutTheCollector
 
         aboutTheCollectorForm.MdiParent = Me
-        aboutTheCollectorForm.Show()
+        aboutTheCollectorForm.Show() ' shw the form
 
     End Sub
 
@@ -81,7 +86,7 @@ Public Class MainForm
 
         createNewClassForm.connection = Me.connection
         createNewClassForm.ccfIdentity = Me.userIdentity
-        createNewClassForm.Show()
+        createNewClassForm.Show() ' show the form
 
     End Sub
 
@@ -95,7 +100,7 @@ Public Class MainForm
 
         createStudentForm.connection = Me.connection ' pass the connection information to the create student form
 
-        createStudentForm.Show()
+        createStudentForm.Show() ' Show the form
 
     End Sub
 
@@ -109,7 +114,7 @@ Public Class MainForm
         classRoster.userIdentity = Me.userIdentity
         classRoster.connection = Me.connection
 
-        classRoster.Show()
+        classRoster.Show() ' Show the form
 
     End Sub
 
@@ -123,24 +128,28 @@ Public Class MainForm
         addStudentToCalssForm.userIdentity = Me.userIdentity
         addStudentToCalssForm.connection = Me.connection
 
-        addStudentToCalssForm.Show()
+        addStudentToCalssForm.Show() ' Show the form
 
 
     End Sub
 
     Private Sub takeTest(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuTakeTestMenuItem.Click
+        ' This subroutine will allow the student to take the test
+        ' This subroutine is not expecting or returning anything
 
+        ' declare the form
         Dim takeTestForm As New TakeTest
 
         takeTestForm.MdiParent = Me
         takeTestForm.connection = Me.connection
         takeTestForm.userIdentity = Me.userIdentity
-        takeTestForm.Show()
+        takeTestForm.Show() ' Show the form
 
     End Sub
 
     Private Sub createQuestion(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateQuesitonMenuItem.Click
         ' This subroutine will display the form to create a quesiton for the question bank
+        ' This subroutine is not expecting or returning anything
 
         Dim createQuestion As New CreateQuestionForm
 
@@ -149,10 +158,7 @@ Public Class MainForm
 
         createQuestion.MdiParent = Me
 
-        createQuestion.Show()
-
-
-
+        createQuestion.Show() ' Show the form
 
     End Sub
 
@@ -173,6 +179,7 @@ Public Class MainForm
 
     Private Sub createTest(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuCreateTestMenuItem.Click
         ' This subroutine will display the form to create a test
+        ' This subroutine is not epecting or returning anything
 
         Dim createTest As New CreateTest
 
@@ -181,7 +188,7 @@ Public Class MainForm
 
         createTest.MdiParent = Me
 
-        createTest.Show()
+        createTest.Show() ' Show the form
 
 
 
@@ -198,14 +205,7 @@ Public Class MainForm
 
         checkGrades.MdiParent = Me
 
-        checkGrades.Show()
-
-    End Sub
-    Private Sub createTeacher()
-
-    End Sub
-
-    Private Sub createAdminMenu()
+        checkGrades.Show() ' Show the form
 
     End Sub
 
@@ -282,6 +282,8 @@ Public Class MainForm
     End Sub
 
     Private Sub createStudentMenu()
+        ' This subroutine will create the appropriate menus for a student's account
+        ' This subroutine is not expecting anything or returning anything; but, will will create the menus for the student's account
 
         ' Creates the test Drop Down Menu
         MenuTestStripMenuItem.Name = "MenuTestStripMenuItem"
@@ -305,7 +307,10 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ' This subroutine will load the proper menus for the main form
+        ' This subroutine is not expecting or returning anything
 
+        ' declarations
         Dim level_name As String = ""
         Dim sqlCommand As New MySqlCommand
         Dim sqlReader As MySqlDataReader
@@ -329,9 +334,10 @@ Public Class MainForm
             Loop
         End If
 
+        ' This will create the proper menus
         Select Case level_name
-            Case "admin"
-                Call createAdminMenu()
+            'Case "admin"
+            '    Call createAdminMenu()
 
             Case "teacher"
                 Call createTeacherMenu()

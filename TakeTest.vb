@@ -1,11 +1,21 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' TakeTest
+' This class represents the test taking functionalities
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql Fucntionalities
 
 Public Class TakeTest
+
+    ' Class Variables
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Public tests As New Dictionary(Of String, Integer)
 
     Private Sub TakeTest_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ' This subroutine represents the form loading for the class
+        ' this subroutine is not expecting or returning anything
+
+        ' declarations
         Dim sqlcommand As New MySqlCommand
         Dim sqlreader As MySqlDataReader
         Dim testString As String
@@ -15,6 +25,7 @@ Public Class TakeTest
         sqlcommand.Connection = Me.connection
         sqlcommand.CommandText = "select tests.test_name, subjects.code, courses.number, semesters.name, classes.year, tests.idtests from tests, classes, class_students, courses, subjects, semesters where tests.test_class = classes.idclasses and class_students.class  =classes.idclasses and class_students.student ='" + Me.userIdentity.id.ToString + "' and classes.course = courses.idcourses and classes.semester = semesters.idsemester and courses.subject = subjects.idsubjects"
 
+        ' Query Error handling
         Try
             sqlreader = sqlcommand.ExecuteReader
 
@@ -24,6 +35,7 @@ Public Class TakeTest
         End Try
 
         If sqlreader.HasRows = True Then
+            ' If there are results add the tests to the dictionary and list box
             Do While sqlreader.Read
                 testString = sqlreader.GetString(0) + " (" + sqlreader.GetString(1) + sqlreader.GetString(2) + " " + sqlreader.GetString(3) + " " + sqlreader.GetString(4) + ")"
                 Me.tests.Add(testString, sqlreader.GetInt64(5))
@@ -45,16 +57,16 @@ Public Class TakeTest
     End Sub
 
     Private Sub cmdOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOk.Click
+        ' This subroutine wil handle the taking of the test
+        ' This subroutine is not expecting or returning anything
 
+        ' declarations
         Dim sqlcommand As New MySqlCommand
         Dim sqlreader As MySqlDataReader
         Dim test As Integer
         Dim questions As New ArrayList
         Dim qtype As Integer
         Dim question_text As String
-        'Dim multipleChoice As New MultipleChoiceForm
-        'Dim trueOrFalse As New TrueOrFalseForm
-        'Dim shortAnswer As New ShortAnswerFrom
 
 
         test = Me.tests.Item(Me.lstTests.SelectedItem.ToString)
@@ -64,6 +76,7 @@ Public Class TakeTest
         sqlcommand.Connection = Me.connection
         sqlcommand.CommandText = "select * from answers where astudent ='" + Me.userIdentity.id.ToString + "' and atest ='" + test.ToString + "'"
 
+        ' Execute the query with error handling
         Try
             sqlreader = sqlcommand.ExecuteReader
 
@@ -122,6 +135,7 @@ Public Class TakeTest
 
                 sqlreader.Close()
 
+                ' show the proper form and the quesiton type
                 Select Case qtype
                     Case 1
                         ' True or False question form

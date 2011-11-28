@@ -1,7 +1,12 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' CreateTest
+' This class represents the creating a test functionality
+' Endris Taylor for the collective
+
+Imports MySql.Data.MySqlClient ' MySql functionalities
 
 Public Class CreateTest
 
+    ' Class Variables
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Private classes As New Dictionary(Of String, Integer) ' This will represent the dictionary of classes in the combo box
@@ -10,6 +15,7 @@ Public Class CreateTest
         ' This subroutine will populate the classes drop down with the classes the teacher has
         ' This subroutine is not expecting or returning anything
 
+        ' declarations
         Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
         Dim classesString As String
@@ -54,6 +60,7 @@ Public Class CreateTest
         ' This subroutine will create the test for the specific class
         ' This suboutine is not expecting or returning anything
 
+        'declarations
         Dim sqlcommand As New MySqlCommand
         Dim sqlreader As MySqlDataReader
         Dim unique As Boolean = False

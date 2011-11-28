@@ -1,6 +1,12 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' TrueOrFalseForm
+' This class represents the true or false test questions
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql Fucntionalities
 
 Public Class TrueOrFalseForm
+
+    ' Class Variables
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Public test As Integer

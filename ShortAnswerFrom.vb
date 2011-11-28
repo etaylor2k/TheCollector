@@ -1,6 +1,12 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' ShortAnswerForm
+' This class represents the short answer questions
+' Endris Taylor for the collective
+
+Imports MySql.Data.MySqlClient ' MySql Functionalities
 
 Public Class ShortAnswerFrom
+
+    ' Class Definitions
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Public test As Integer
@@ -11,14 +17,17 @@ Public Class ShortAnswerFrom
         ' This subroutine will get the correct answer from the database from this question
         ' This subroutine is not expecting or returning anything 
 
+        ' declarations
         Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
 
+        ' check connections
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
         sqlcommand.CommandText = "Select sa_answer from short_answers where saquestion ='" + Me.question.ToString + "'"
 
+        ' error handling for query
         Try
             sqlreader = sqlcommand.ExecuteReader
 

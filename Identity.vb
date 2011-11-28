@@ -1,5 +1,6 @@
-﻿' This is a module file for the identity structure. Since this is more like a user-definied data type, we decided to use a structure and not a class. 
-
+﻿' Identity
+' This is a module file for the identity structure. Since this is more like a user-definied data type, we decided to use a structure and not a class. 
+' Endris Taylor for the Collective
 
 Public Structure Identity
     ' This structure is representative of the users table

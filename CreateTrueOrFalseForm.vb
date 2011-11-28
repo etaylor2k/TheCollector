@@ -1,6 +1,12 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' CreateTrueOfFlaseForm
+' This class represents creating the true or false form
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql functionalities
 
 Public Class CreateTrueOrFalseForm
+
+    ' Class Variables
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Public subject As Integer
@@ -26,17 +32,20 @@ Public Class CreateTrueOrFalseForm
         ' This subroutine will create the question if it is unique to the subject
         ' This form is not expecting or returning anything
 
+        ' Declarations
         Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
         Dim questionCreated As Boolean = False
         Dim torfCreated As Boolean = False
         Dim question As Integer
 
+        ' check the connection
         If Me.connection.State = ConnectionState.Broken Then Me.connection.Open()
 
         sqlcommand.Connection = Me.connection
         sqlcommand.CommandText = "select * from questions where question_text ='" + Trim(Me.txtQuestion.Text.ToString) + "' and type ='" + Me.type.ToString + "' and qsubject = '" + Me.subject.ToString + "'"
 
+        ' Error handling for the query
         Try
             sqlreader = sqlcommand.ExecuteReader
 
@@ -56,7 +65,7 @@ Public Class CreateTrueOrFalseForm
             sqlreader.Close()
             If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
-
+            ' insert command
             sqlcommand.Connection = Me.connection
             sqlcommand.CommandText = "insert into questions(idquestions, question_text, type, qsubject) VALUES(?idquestions, ?question_text, ?type, ?qsubject)"
 
@@ -65,6 +74,7 @@ Public Class CreateTrueOrFalseForm
             sqlcommand.Parameters.AddWithValue("?type", Me.type.ToString)
             sqlcommand.Parameters.AddWithValue("?qsubject", Me.subject.ToString)
 
+            ' insert error handling
             Try
                 sqlcommand.ExecuteNonQuery() ' execute the insert
                 questionCreated = True

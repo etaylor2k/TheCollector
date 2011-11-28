@@ -1,6 +1,12 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' MultipleChoiceForm
+' This class represents the multiple choice question form
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql functionalities
 
 Public Class MultipleChoiceForm
+
+    ' Class variables
     Public connection As MySqlConnection
     Public userIdentity As Identity
     Public test As Integer
@@ -11,15 +17,18 @@ Public Class MultipleChoiceForm
         ' This subrotuine will load the proper answers, and populate the multiple choice selections
         ' This sunroutine is not expecting or returning anything
 
+        ' declarations
         Dim sqlreader As MySqlDataReader
         Dim sqlcommand As New MySqlCommand
         Dim index As Integer = 0
 
         If Me.connection.State = ConnectionState.Closed Then Me.connection.Open()
 
+        ' gets the answer
         sqlcommand.Connection = Me.connection
         sqlcommand.CommandText = "Select answer_text, correct_answer from multiple_choices where mcquestion ='" + Me.question.ToString + "'"
 
+        ' Error handling for the query
         Try
             sqlreader = sqlcommand.ExecuteReader
 
@@ -28,8 +37,10 @@ Public Class MultipleChoiceForm
 
         End Try
 
+
         If sqlreader.HasRows = True Then
             Do While sqlreader.Read
+                ' Populates the multiple choice questions answers
                 Select Case index
                     Case 0
                         txtAnswerA.Text = sqlreader.GetString(0)
@@ -59,7 +70,7 @@ Public Class MultipleChoiceForm
 
                 index += 1
             Loop
-            sqlreader.Close()
+            sqlreader.Close() ' close the data reader
 
         Else
             MsgBox("Error Loading Question")
@@ -228,5 +239,5 @@ Public Class MultipleChoiceForm
 
     End Sub
 
-   
+
 End Class

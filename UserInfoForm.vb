@@ -1,10 +1,14 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' UserInfoForm
+' This class represents showing and updating a particular users information
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' MySql Functionalities
 
 Public Class UserInfoForm
     ' This class is the UserInfoForm class which is representing the User Information form. With this form the user is able to update the information about their specific account
 
+    ' C;lass Vriables
     Public connection As MySqlConnection
-
     Public uifUsersIdentity As identity ' The identity of the user
 
 

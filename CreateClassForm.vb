@@ -1,9 +1,13 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' CreateClassForm
+' This class represents the creating a class functionality
+' Endris Taylor for the Collective
+
+Imports MySql.Data.MySqlClient ' For MySql functionality
 
 Public Class CreateClassForm
 
+    ' Class variables
     Public connection As MySqlConnection
-
     Public ccfIdentity As Identity
 
 
@@ -11,6 +15,7 @@ Public Class CreateClassForm
         ' This subroutine will attempt to create the classes
         ' This subroutine is not expecting anything and will not return anything
 
+        ' Declarations
         Dim sqlICommnad As New MySqlCommand
         Dim sqlIReader As MySqlDataReader
 
@@ -30,6 +35,7 @@ Public Class CreateClassForm
         semester = Me.comboSemester.SelectedValue
         section = Me.comboSection.SelectedValue
 
+        ' query for a unique class
         sqlICommnad.Connection = Me.connection
         sqlICommnad.CommandText = "select * from classes where course ='" + course.ToString + "' and grade_level ='" + gradelevel.ToString + "' and " _
                 & "semester ='" + semester.ToString + "' and section ='" + section.ToString + "' and year ='" + numYear.Value.ToString + "'"

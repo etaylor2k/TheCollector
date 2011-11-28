@@ -1,15 +1,20 @@
-﻿Imports MySql.Data.MySqlClient
+﻿' CreateStudent
+' Class for creating a student
+' Endris Taylor for The Collective
+
+Imports MySql.Data.MySqlClient ' For MySql functionalities
 
 Public Class CreateStudent
 
+    ' Class Variable
     Public connection As MySqlConnection
 
     Private Sub cmdOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdOk.Click
         ' This subroutine will attempt to create a new student when the user clicks the 'ok' button after they enter the
         '   students information
-
         ' This subroutine is not expecting anything or returning anything
 
+        ' Declarations
         Dim created As Boolean = False
         Dim uniqueUsername As Boolean = False
         Dim uniqueEmail As Boolean = False
@@ -19,6 +24,7 @@ Public Class CreateStudent
         If ((txtEmail.Text <> "") And (txtUsername.Text <> "")) Then
             ' If the two required fields are not empty
 
+            ' check if the student is unique
             uniqueUsername = isUniqueUser("username", txtUsername.Text) ' test to see if the username is unique
             uniqueEmail = isUniqueUser("email", txtEmail.Text) ' test to see if the email unique
 
@@ -60,12 +66,15 @@ Public Class CreateStudent
                 If Me.connection.State = ConnectionState.Closed Then Me.connection.Open() ' if the connection is closed, then reopen it
                 sqlICommnad.Connection = Me.connection ' assign the connection to the commane
 
+                ' Error handling for the insert command
                 Try
+                    ' execute the command
                     sqlICommnad.ExecuteNonQuery() ' execute the insert
                     created = True
 
 
                 Catch ex As Exception
+                    ' send exception to a messagebox
                     MsgBox(ex.Message)
 
                 End Try
@@ -80,7 +89,7 @@ Public Class CreateStudent
             End If
 
         End If
-        Me.Close()
+        Me.Close() ' close the data reader
 
     End Sub
 
@@ -128,6 +137,7 @@ Public Class CreateStudent
         ' This function will create an entry in the students table
         ' This function is expecting the username of the newly created student 
 
+        ' declarations
         Dim sqlCommand As New MySqlCommand
         Dim sqlReader As MySqlDataReader
         Dim createdStudent As Boolean
